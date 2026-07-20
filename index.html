@@ -1,55 +1,85 @@
-index.html
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aegina Tech | Soluções Tecnológicas</title>
+    <title>Aegina Tech | Criação e Manutenção de Sites</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
         body {
             background-color: #0b0f19;
             color: #ffffff;
+            line-height: 1.6;
+        }
+        header {
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00cae3;
+            text-decoration: none;
+        }
+        .nav-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #00cae3;
+        }
+        .section {
+            padding: 100px 20px 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hero {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
             text-align: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            background: radial-gradient(circle at center, rgba(0, 202, 227, 0.15) 0%, rgba(11, 15, 25, 0) 70%);
         }
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: #00cae3;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             letter-spacing: 1px;
         }
-        p {
-            font-size: 1.2rem;
+        .hero p {
+            font-size: 1.4rem;
             color: #a0aec0;
-            margin-bottom: 30px;
-            line-height: 1.6;
+            max-width: 700px;
+            margin-bottom: 40px;
         }
         .btn {
             display: inline-block;
             background: linear-gradient(135deg, #00cae3, #0072ff);
             color: #fff;
-            padding: 12px 30px;
+            padding: 14px 35px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
@@ -59,20 +89,167 @@ index.html
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0, 202, 227, 0.4);
         }
+        h2 {
+            font-size: 2.5rem;
+            color: #00cae3;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 16px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 202, 227, 0.3);
+        }
+        .card h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .card p {
+            color: #a0aec0;
+        }
+        .about-text {
+            font-size: 1.2rem;
+            color: #a0aec0;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 16px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #a0aec0;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(11, 15, 25, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #00cae3;
+        }
         footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
+            text-align: center;
+            padding: 40px 20px;
             color: #4a5568;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Aegina Tech</a>
+            <nav class="nav-links">
+                <a href="#home">Início</a>
+                <a href="#sobre">Quem Somos</a>
+                <a href="#diretrizes">Diretrizes</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
         <h1>Aegina Tech</h1>
-        <p>Inovação, segurança e inteligência para transformar o seu negócio. Estamos preparando algo incrível para você.</p>
-        <a href="#" class="btn">Em Breve</a>
-    </div>
+        <p>Criamos, atualizamos e cuidamos da presença digital do seu negócio com sites profissionais, rápidos e sob medida.</p>
+        <a href="#contato" class="btn">Solicitar um Orçamento</a>
+    </section>
+
+    <section id="sobre" class="section">
+        <h2>Quem Somos</h2>
+        <p class="about-text">
+            A Aegina Tech nasceu com o objetivo claro de simplificar a entrada e a permanência de empresas no mundo digital. Somos especialistas no desenvolvimento e no suporte técnico de sites de alto impacto. Cuidamos de toda a parte complexa da internet para que você possa focar apenas no crescimento do seu negócio.
+        </p>
+    </section>
+
+    <section id="diretrizes" class="section">
+        <h2>Nossas Diretrizes</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>🎯 Missão</h3>
+                <p>Desenvolver sites modernos e oferecer suporte técnico contínuo e ágil, garantindo que as páginas dos nossos clientes estejam sempre online, seguras e gerando resultados.</p>
+            </div>
+            <div class="card">
+                <h3>👁️ Visão</h3>
+                <p>Ser a parceira tecnológica número um de pequenas e médias empresas quando o assunto for criação, evolução e estabilidade de plataformas web.</p>
+            </div>
+            <div class="card">
+                <h3>💎 Valores</h3>
+                <p>Compromisso com prazos, clareza total com o cliente, código limpo e atenção máxima à estabilidade e segurança de cada projeto.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="section">
+        <h2>O Que Fazemos</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>🌐 Criação de Web Sites</h3>
+                <p>Desenvolvimento de sites institucionais, páginas de vendas (landing pages) e portfólios modernos, otimizados para o Google e totalmente responsivos para celular.</p>
+            </div>
+            <div class="card">
+                <h3>🛠️ Manutenção e Atualizações</h3>
+                <p>Suporte técnico completo: correção de erros, alteração de textos e imagens, inserção de novas funções e garantia de que nada fique quebrado.</p>
+            </div>
+            <div class="card">
+                <h3>⚙️ Infraestrutura e Domínios</h3>
+                <p>Configuração de hospedagem, registro de marcas/domínios, instalação de certificados de segurança (SSL) e criação de e-mails profissionais.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section">
+        <h2>Entre em Contato</h2>
+        <form onsubmit="event.preventDefault(); alert('Mensagem enviada! Entraremos em contato em breve.');">
+            <div class="form-group">
+                <label for="name">Nome / Empresa</label>
+                <input type="text" id="name" required placeholder="Seu nome ou nome da empresa">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail de Contato</label>
+                <input type="email" id="email" required placeholder="seuemail@provedor.com">
+            </div>
+            <div class="form-group">
+                <label for="message">Fale sobre o seu projeto</label>
+                <textarea id="message" rows="5" required placeholder="Precisa de um site novo ou de manutenção no atual? Conte para nós."></textarea>
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" class="btn" style="border: none; cursor: pointer;">Enviar Mensagem</button>
+            </div>
+        </form>
+    </section>
 
     <footer>
         &copy; 2026 Aegina Tech. Todos os direitos reservados.
