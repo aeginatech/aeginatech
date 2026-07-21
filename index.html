@@ -8,7 +8,7 @@
     <!-- Ícone da aba do navegador (Favicon) -->
     <link rel="icon" type="image/png" href="logo.png">
 
-    <!-- BIBLIOTECA DE ÍCONES (Garante que WhatsApp, Insta e Face apareçam em qualquer dispositivo) -->
+    <!-- BIBLIOTECA DE ÍCONES (Garante que TODOS os ícones funcionem em qualquer dispositivo) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -88,6 +88,13 @@
             font-size: 1.6rem;
             border-bottom: 2px solid var(--cinza-suave-fundo);
             padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 i {
+            color: var(--azul-grecia-vibrante);
         }
 
         /* HERO & VÍDEO */
@@ -187,6 +194,13 @@
             color: var(--azul-escuro-logo);
             font-size: 1.15rem;
             margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-servico h3 i {
+            color: var(--azul-grecia-vibrante);
         }
 
         .card-servico p {
@@ -228,6 +242,10 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background 0.2s, transform 0.1s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .btn-enviar:hover {
@@ -304,7 +322,7 @@
 
         <!-- 1. HERO SECTION COM VÍDEO E BOTÕES DE AÇÃO -->
         <section class="secao">
-            <h2>Transforme seu Negócio no Ambiente Digital</h2>
+            <h2><i class="fa-solid fa-rocket"></i> Transforme seu Negócio no Ambiente Digital</h2>
             <p class="hero-subtitulo">Assista ao vídeo e descubra como ter um site profissional, veloz e focado em atrair clientes todos os dias.</p>
             
             <div class="video-wrapper">
@@ -327,27 +345,27 @@
 
         <!-- 2. SERVIÇOS EXCLUSIVOS DE CRIAÇÃO & MODERNIZAÇÃO -->
         <section class="secao">
-            <h2>Nossas Soluções em Tecnologia</h2>
+            <h2><i class="fa-solid fa-gears"></i> Nossas Soluções em Tecnologia</h2>
             <p style="color: var(--texto-secundario);">Desenvolvemos a estrutura ideal para pequenos comerciantes, profissionais liberais e microempreendedores se destacarem no mercado.</p>
             
             <div class="grid-servicos">
                 <div class="card-servico">
-                    <h3>💻 Sites Institucionais</h3>
+                    <h3><i class="fa-solid fa-laptop-code"></i> Sites Institucionais</h3>
                     <p>Páginas completas, modernas e velozes para apresentar sua empresa com máxima credibilidade.</p>
                 </div>
 
                 <div class="card-servico">
-                    <h3>🚀 Landing Pages de Vendas</h3>
+                    <h3><i class="fa-solid fa-chart-line"></i> Landing Pages de Vendas</h3>
                     <p>Páginas diretas e de alta conversão, totalmente otimizadas para gerar cliques no seu WhatsApp.</p>
                 </div>
 
                 <div class="card-servico">
-                    <h3>📧 E-mail Profissional</h3>
+                    <h3><i class="fa-solid fa-envelope-open-text"></i> E-mail Profissional</h3>
                     <p>Criação e configuração do seu e-mail corporativo (seu-nome@suaempresa.com.br) para passar total confiança.</p>
                 </div>
 
                 <div class="card-servico">
-                    <h3>🔄 Modernização de Sites</h3>
+                    <h3><i class="fa-solid fa-rotate"></i> Modernização de Sites</h3>
                     <p>Reformulamos seu site antigo ou lento, deixando-o super rápido e adaptado para todos os celulares.</p>
                 </div>
             </div>
@@ -355,7 +373,7 @@
 
         <!-- 3. FORMULÁRIO DE CONTATO (WEB3FORMS) -->
         <section class="secao" id="orcamento">
-            <h2>Solicite um Orçamento Sem Compromisso</h2>
+            <h2><i class="fa-solid fa-paper-plane"></i> Solicite um Orçamento Sem Compromisso</h2>
             <p style="margin-bottom: 15px; color: var(--texto-secundario);">Preencha os campos abaixo e entraremos em contato diretamente com você!</p>
             
             <form action="https://api.web3forms.com/submit" method="POST">
@@ -366,13 +384,13 @@
                 <input type="tel" name="phone" placeholder="Seu WhatsApp com DDD">
                 <textarea name="message" rows="4" placeholder="Descreva brevemente o serviço que você precisa..." required></textarea>
 
-                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+                <button type="submit" class="btn-enviar"><i class="fa-solid fa-paper-plane"></i> Enviar Mensagem</button>
             </form>
         </section>
 
         <!-- 4. CONTATO DIRETO E REDES SOCIAIS COM ÍCONES REAIS -->
         <section class="secao">
-            <h2>Fale Conosco em Nossos Canais</h2>
+            <h2><i class="fa-solid fa-comments"></i> Fale Conosco em Nossos Canais</h2>
             <p style="color: var(--texto-secundario);">Escolha a melhor opção para falar com a equipe da Aegina Tech:</p>
             <div class="redes-container">
                 <a href="https://wa.me/5511995793435" target="_blank" class="btn-social whats">
@@ -389,9 +407,8 @@
 
         <!-- 5. ÁREA DE CHECKOUT RESERVADA -->
         <section class="secao">
-            <h2>Área de Pagamento Seguro</h2>
+            <h2><i class="fa-solid fa-shield-halved"></i> Área de Pagamento Seguro</h2>
             <div class="checkout-box">
-                <!-- TEXTO CORRIGIDO AQUI -->
                 <p style="margin-bottom: 10px; font-weight: bold; color: var(--azul-escuro-logo);">Já fechou um projeto com a Aegina Tech?</p>
                 <p style="color: var(--texto-secundario); font-size: 0.95rem; margin-bottom: 15px;">Realize o pagamento do seu serviço com total segurança via Pix ou Cartão de Crédito.</p>
                 <p style="color: var(--azul-grecia-vibrante); font-weight: bold; font-size: 0.9rem;">[ Botão Oficial do Mercado Pago ]</p>
