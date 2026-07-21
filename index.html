@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aegina Tech | Cria&ccedil;&atilde;o e Moderniza&ccedil;&atilde;o de Sites Profissionais</title>
+    <title>Aegina Tech | Criação e Modernização de Sites Profissionais</title>
     
-    <!-- &Iacute;cone da aba do navegador (Favicon) -->
+    <!-- Ícone da aba do navegador (Favicon) -->
     <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- BIBLIOTECA DE ÍCONES (Garante que WhatsApp, Insta e Face apareçam em qualquer dispositivo) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         /* PALETA DE CORES OFICIAL DA AEGINA TECH */
         :root {
             --azul-escuro-logo: #132235;   /* Tom forte e elegante do escudo */
-            --azul-grecia-vibrante: #005bae;/* Destaque prim&aacute;rio */
+            --azul-grecia-vibrante: #005bae;/* Destaque primário */
             --cinza-suave-fundo: #f4f6f9;  /* Fundo limpo */
             --branco: #ffffff;
             --texto-principal: #111827;
@@ -69,7 +72,7 @@
             padding: 0 20px;
         }
 
-        /* SE&Ccedil;&Otilde;ES GERAIS */
+        /* SEÇÕES GERAIS */
         .secao {
             background: var(--branco);
             padding: 35px;
@@ -87,7 +90,7 @@
             padding-bottom: 10px;
         }
 
-        /* HERO & V&Iacute;DEO */
+        /* HERO & VÍDEO */
         .hero-subtitulo {
             text-align: center;
             font-size: 1.1rem;
@@ -111,7 +114,7 @@
             display: block;
         }
 
-        /* BOT&Otilde;ES NA HERO SECTION */
+        /* BOTÕES NA HERO SECTION */
         .hero-botoes {
             display: flex;
             gap: 15px;
@@ -158,7 +161,7 @@
             box-shadow: 0 6px 15px rgba(0, 91, 174, 0.25);
         }
 
-        /* GRADE DE SERVI&Ccedil;OS */
+        /* GRADE DE SERVIÇOS */
         .grid-servicos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -191,7 +194,7 @@
             font-size: 0.95rem;
         }
 
-        /* FORMUL&Aacute;RIO DE CONTATO */
+        /* FORMULÁRIO DE CONTATO */
         form {
             display: flex;
             flex-direction: column;
@@ -253,7 +256,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             transition: opacity 0.2s, transform 0.1s;
         }
 
@@ -266,7 +269,7 @@
             transform: translateY(-2px);
         }
 
-        /* &Aacute;REA DE CHECKOUT RESERVADA */
+        /* ÁREA DE CHECKOUT RESERVADA */
         .checkout-box {
             text-align: center;
             border: 2px dashed #d1d5db;
@@ -294,105 +297,104 @@
     <header>
         <!-- LOGO OFICIAL DA AEGINA TECH -->
         <img src="logo.png" alt="Aegina Tech Logo" class="logo-header">
-        <p>Presen&ccedil;a Digital de Alta Performance para o Seu Neg&oacute;cio</p>
+        <p>Presença Digital de Alta Performance para o Seu Negócio</p>
     </header>
 
     <div class="container">
 
-        <!-- 1. HERO SECTION COM V&Iacute;DEO E BOT&Otilde;ES DE A&Ccedil;&Atilde;O -->
+        <!-- 1. HERO SECTION COM VÍDEO E BOTÕES DE AÇÃO -->
         <section class="secao">
-            <h2>Transforme seu Neg&oacute;cio no Ambiente Digital</h2>
-            <p class="hero-subtitulo">Assista ao v&iacute;deo e descubra como ter um site profissional, veloz e focado em atrair clientes todos os dias.</p>
+            <h2>Transforme seu Negócio no Ambiente Digital</h2>
+            <p class="hero-subtitulo">Assista ao vídeo e descubra como ter um site profissional, veloz e focado em atrair clientes todos os dias.</p>
             
             <div class="video-wrapper">
                 <video controls poster="https://via.placeholder.com/900x500/132235/ffffff?text=Clique+para+Assistir+ao+V%C3%ADdeo">
                     <source src="video-aegina.mp4" type="video/mp4">
-                    Seu navegador n&atilde;o suporta a exibi&ccedil;&atilde;o de v&iacute;deos.
+                    Seu navegador não suporta a exibição de vídeos.
                 </video>
             </div>
 
-            <!-- BOT&Otilde;ES NA HERO -->
+            <!-- BOTÕES NA HERO -->
             <div class="hero-botoes">
                 <a href="https://wa.me/5511995793435" target="_blank" class="btn-hero btn-hero-whats">
-                    💬 Chamar no WhatsApp Agora
+                    <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp Agora
                 </a>
                 <a href="#orcamento" class="btn-hero btn-hero-orcamento">
-                    📋 Solicitar Or&ccedil;amento Gr&aacute;tis
+                    <i class="fa-solid fa-file-signature"></i> Solicitar Orçamento Grátis
                 </a>
             </div>
         </section>
 
-        <!-- 2. SERVI&Ccedil;OS EXCLUSIVOS DE CRIA&Ccedil;&Atilde;O & MODERNIZA&Ccedil;&Atilde;O -->
+        <!-- 2. SERVIÇOS EXCLUSIVOS DE CRIAÇÃO & MODERNIZAÇÃO -->
         <section class="secao">
-            <h2>Nossas Solu&ccedil;&otilde;es em Tecnologia</h2>
+            <h2>Nossas Soluções em Tecnologia</h2>
             <p style="color: var(--texto-secundario);">Desenvolvemos a estrutura ideal para pequenos comerciantes, profissionais liberais e microempreendedores se destacarem no mercado.</p>
             
             <div class="grid-servicos">
                 <div class="card-servico">
                     <h3>💻 Sites Institucionais</h3>
-                    <p>P&aacute;ginas completas, modernas e velozes para apresentar sua empresa com m&aacute;xima credibilidade.</p>
+                    <p>Páginas completas, modernas e velozes para apresentar sua empresa com máxima credibilidade.</p>
                 </div>
 
                 <div class="card-servico">
                     <h3>🚀 Landing Pages de Vendas</h3>
-                    <p>P&aacute;ginas diretas e de alta convers&atilde;o, totalmente otimizadas para gerar cliques no seu WhatsApp.</p>
+                    <p>Páginas diretas e de alta conversão, totalmente otimizadas para gerar cliques no seu WhatsApp.</p>
                 </div>
 
                 <div class="card-servico">
                     <h3>📧 E-mail Profissional</h3>
-                    <p>Cria&ccedil;&atilde;o e configura&ccedil;&atilde;o do seu e-mail corporativo (seu-nome@suaempresa.com.br) para passar total confian&ccedil;a.</p>
+                    <p>Criação e configuração do seu e-mail corporativo (seu-nome@suaempresa.com.br) para passar total confiança.</p>
                 </div>
 
                 <div class="card-servico">
-                    <h3>🔄 Moderniza&ccedil;&atilde;o de Sites</h3>
-                    <p>Reformulamos seu site antigo ou lento, deixando-o super r&aacute;pido e adaptado para todos os celulares.</p>
+                    <h3>🔄 Modernização de Sites</h3>
+                    <p>Reformulamos seu site antigo ou lento, deixando-o super rápido e adaptado para todos os celulares.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 3. FORMUL&Aacute;RIO DE CONTATO (WEB3FORMS) -->
+        <!-- 3. FORMULÁRIO DE CONTATO (WEB3FORMS) -->
         <section class="secao" id="orcamento">
-            <h2>Solicite um Or&ccedil;amento Sem Compromisso</h2>
-            <p style="margin-bottom: 15px; color: var(--texto-secundario);">Preencha os campos abaixo e entraremos em contato diretamente com voc&ecirc;!</p>
+            <h2>Solicite um Orçamento Sem Compromisso</h2>
+            <p style="margin-bottom: 15px; color: var(--texto-secundario);">Preencha os campos abaixo e entraremos em contato diretamente com você!</p>
             
             <form action="https://api.web3forms.com/submit" method="POST">
-                <!-- Chave do Web3Forms vinculada ao e-mail aeginatech@gmail.com -->
                 <input type="hidden" name="access_key" value="SUA_CHAVE_AQUI">
 
                 <input type="text" name="name" placeholder="Seu Nome" required>
                 <input type="email" name="email" placeholder="Seu e-mail" required>
                 <input type="tel" name="phone" placeholder="Seu WhatsApp com DDD">
-                <textarea name="message" rows="4" placeholder="Descreva brevemente o servi&ccedil;o que voc&ecirc; precisa..." required></textarea>
+                <textarea name="message" rows="4" placeholder="Descreva brevemente o serviço que você precisa..." required></textarea>
 
                 <button type="submit" class="btn-enviar">Enviar Mensagem</button>
             </form>
         </section>
 
-        <!-- 4. CONTATO DIRETO E REDES SOCIAIS -->
+        <!-- 4. CONTATO DIRETO E REDES SOCIAIS COM ÍCONES REAIS -->
         <section class="secao">
             <h2>Fale Conosco em Nossos Canais</h2>
-            <p style="color: var(--texto-secundario);">Escolha a melhor op&ccedil;&atilde;o para falar com a equipe da Aegina Tech:</p>
+            <p style="color: var(--texto-secundario);">Escolha a melhor opção para falar com a equipe da Aegina Tech:</p>
             <div class="redes-container">
                 <a href="https://wa.me/5511995793435" target="_blank" class="btn-social whats">
-                    <span>📱 WhatsApp: (11) 99579-3435</span>
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp: (11) 99579-3435
                 </a>
                 <a href="https://instagram.com" target="_blank" class="btn-social insta">
-                    <span>📷 Instagram: @Aegina Tech</span>
+                    <i class="fa-brands fa-instagram"></i> Instagram: @Aegina Tech
                 </a>
                 <a href="https://facebook.com" target="_blank" class="btn-social face">
-                    <span>👍 Facebook: Aegina Tech</span>
+                    <i class="fa-brands fa-facebook-f"></i> Facebook: Aegina Tech
                 </a>
             </div>
         </section>
 
-        <!-- 5. &Aacute;REA RESERVADA PARA MERCADO PAGO -->
+        <!-- 5. ÁREA DE CHECKOUT RESERVADA -->
         <section class="secao">
-            <h2>&Aacute;rea de Pagamento Seguro</h2>
+            <h2>Área de Pagamento Seguro</h2>
             <div class="checkout-box">
-                <p style="margin-bottom: 10px; font-weight: bold; color: var(--azul-escuro-logo);">&Iacute;a fechou um projeto com a Aegina Tech?</p>
-                <p style="color: var(--texto-secundario); font-size: 0.95rem; margin-bottom: 15px;">Realize o pagamento do seu servi&ccedil;o com total seguran&ccedil;a via Pix ou Cart&atilde;o de Cr&eacute;dito.</p>
-                <!-- O bot&atilde;o/c&oacute;digo oficial do Mercado Pago entrar&aacute; no espa&ccedil;o abaixo -->
-                <p style="color: var(--azul-grecia-vibrante); font-weight: bold; font-size: 0.9rem;">[ Bot&atilde;o Oficial do Mercado Pago ]</p>
+                <!-- TEXTO CORRIGIDO AQUI -->
+                <p style="margin-bottom: 10px; font-weight: bold; color: var(--azul-escuro-logo);">Já fechou um projeto com a Aegina Tech?</p>
+                <p style="color: var(--texto-secundario); font-size: 0.95rem; margin-bottom: 15px;">Realize o pagamento do seu serviço com total segurança via Pix ou Cartão de Crédito.</p>
+                <p style="color: var(--azul-grecia-vibrante); font-weight: bold; font-size: 0.9rem;">[ Botão Oficial do Mercado Pago ]</p>
             </div>
         </section>
 
@@ -400,7 +402,7 @@
 
     <footer>
         <p>&copy; Aegina Tech - Todos os direitos reservados.</p>
-        <p style="font-size: 0.8rem; margin-top: 5px; color: #9ca3af;">Cria&ccedil;&atilde;o e Moderniza&ccedil;&atilde;o de Sites Profissionais</p>
+        <p style="font-size: 0.8rem; margin-top: 5px; color: #9ca3af;">Criação e Modernização de Sites Profissionais</p>
     </footer>
 
 </body>
