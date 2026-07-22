@@ -3,1057 +3,933 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aegina Tech | Criação de Sites Profissionais e Otimizados</title>
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <title>AEGINA TECH - Desenvolvimento Web & Soluções Digitais</title>
     <style>
         :root {
-            --azul-escuro-logo: #0b1320;
-            --azul-card-fundo: #132235;
-            --azul-grecia-vibrante: #0066cc;
-            --azul-detalhe-sky: #38bdf8;
-            --cinza-suave-fundo: #f8fafc;
-            --branco: #ffffff;
-            --texto-principal: #0f172a;
-            --texto-secundario: #475569;
-            --borda-suave: #e2e8f0;
-            --vermelho-erro: #ef4444;
-            --verde-sucesso: #10b981;
-            --amarelo-estrela: #fbbf24;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --accent: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--cinza-suave-fundo);
-            color: var(--texto-principal);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-family);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* HEADER & BRANDING */
+        /* Header / Navbar sem divisórias */
         header {
-            background-color: var(--azul-escuro-logo);
-            color: var(--branco);
-            padding: 15px 5%;
+            background: transparent;
+            padding: 24px 40px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 3px solid var(--azul-grecia-vibrante);
-            position: sticky;
+            position: absolute;
             top: 0;
-            z-index: 1000;
+            left: 0;
+            width: 100%;
+            z-index: 100;
         }
 
-        /* LOGO SVG VETORIAL ESCUDO */
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             text-decoration: none;
+            color: var(--text-main);
         }
 
-        .escudo-svg {
-            width: 40px;
-            height: 45px;
-        }
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1;
+        .logo-svg {
+            width: 44px;
+            height: 50px;
         }
 
         .brand-name {
-            font-size: 1.4rem;
-            font-weight: 900;
-            letter-spacing: 1px;
-            color: var(--branco);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .brand-name span {
-            color: var(--azul-detalhe-sky);
+        /* Hero Section */
+        .hero {
+            padding: 150px 20px 70px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .brand-sub {
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            color: #94a3b8;
-            text-transform: uppercase;
-            margin-top: 3px;
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 800;
         }
 
-        .redes-topo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
         }
 
-        .icon-topo {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: color 0.2s, transform 0.2s;
-        }
-
-        .icon-topo:hover {
-            color: var(--branco);
-            transform: scale(1.15);
-        }
-
+        /* Section Container */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 50px 20px;
         }
 
-        .secao {
-            margin-bottom: 70px;
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
 
-        .titulo-secao {
+        .section-subtitle {
             text-align: center;
+            color: var(--text-muted);
             margin-bottom: 40px;
         }
 
-        .titulo-secao h2 {
-            color: var(--azul-escuro-logo);
-            font-size: 1.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 800;
-        }
-
-        .subtitulo-secao {
-            color: var(--texto-secundario);
-            font-size: 1rem;
-            margin-top: 8px;
-        }
-
-        /* HERO CARD */
-        .hero-card {
-            background: linear-gradient(135deg, #0b1320 0%, #132235 100%);
-            color: var(--branco);
-            padding: 60px 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(11, 19, 32, 0.2);
-            margin-bottom: 60px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .hero-card h1 {
-            font-size: 2.3rem;
-            margin-bottom: 18px;
-            font-weight: 800;
-            line-height: 1.2;
-        }
-
-        .hero-card h1 span {
-            color: var(--azul-detalhe-sky);
-        }
-
-        .hero-card p {
-            color: #cbd5e1;
-            font-size: 1.1rem;
-            max-width: 750px;
-            margin: 0 auto 30px auto;
-        }
-
-        .btn-hero {
-            background-color: var(--azul-grecia-vibrante);
-            color: var(--branco);
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
-        }
-
-        .btn-hero:hover {
-            background-color: #0052a3;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.6);
-        }
-
-        /* PASSO A PASSO (COMO CONTRATAR) */
-        .grid-passos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .card-passo {
-            background: var(--branco);
-            border-radius: 14px;
-            padding: 30px 25px;
-            border: 1px solid var(--borda-suave);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        /* Carrossel Rotativo Automático (7s) */
+        .carousel-container {
             position: relative;
-            transition: transform 0.3s;
-        }
-
-        .card-passo:hover {
-            transform: translateY(-5px);
-        }
-
-        .num-passo {
-            width: 45px;
-            height: 45px;
-            background: var(--azul-escuro-logo);
-            color: var(--azul-detalhe-sky);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        /* PORTFÓLIO VISUAL (CAPAS DOS SITES) */
-        .grid-portfolio {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card-portfolio {
-            background: var(--branco);
+            background: var(--bg-card);
             border-radius: 16px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+            margin-bottom: 40px;
             overflow: hidden;
-            border: 1px solid var(--borda-suave);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .slide {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .slide-img-wrapper {
+            width: 100%;
+            height: 320px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .slide-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #60a5fa;
+        }
+
+        .slide-content p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: var(--border-color);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--primary);
+            width: 28px;
+            border-radius: 6px;
+        }
+
+        /* Grid de 6 Modelos Visuais (2x3) */
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .models-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .models-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, border-color 0.3s;
             display: flex;
             flex-direction: column;
         }
 
-        .card-portfolio:hover {
+        .model-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            border-color: var(--primary);
         }
 
-        .portfolio-thumb {
+        .model-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-bottom: 1px solid var(--borda-suave);
         }
 
-        .portfolio-body {
-            padding: 22px;
+        .model-card-body {
+            padding: 20px;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
+            justify-content: space-between;
         }
 
-        .portfolio-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--azul-grecia-vibrante);
-            letter-spacing: 1px;
-            margin-bottom: 6px;
+        .model-card-title {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
         }
 
-        .portfolio-title {
-            font-size: 1.15rem;
-            color: var(--texto-principal);
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .portfolio-desc {
-            font-size: 0.88rem;
-            color: var(--texto-secundario);
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .btn-ver-modelo {
-            background: #f1f5f9;
-            color: var(--azul-escuro-logo);
-            text-decoration: none;
-            padding: 10px 16px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .btn-ver-modelo:hover {
-            background: var(--azul-escuro-logo);
-            color: var(--branco);
-        }
-
-        /* PROBLEMA VS SOLUÇÃO */
-        .grid-comparativo {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .card-comparativo {
-            border-radius: 14px;
-            padding: 30px;
-        }
-
-        .card-problema {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-        }
-
-        .card-solucao {
-            background: #f0fdf4;
-            border: 1px solid #bbf7d0;
-        }
-
-        .lista-comparativa {
-            list-style: none;
-        }
-
-        .lista-comparativa li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .model-card-desc {
+            color: var(--text-muted);
             font-size: 0.95rem;
+            margin-bottom: 20px;
         }
 
-        /* FUNCIONALIDADES / OPCIONAIS */
-        .grid-recursos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .card-recurso {
-            background: var(--branco);
-            border: 1px solid var(--borda-suave);
-            border-radius: 12px;
-            padding: 22px;
-            transition: all 0.2s;
-        }
-
-        .card-recurso:hover {
-            border-color: var(--azul-grecia-vibrante);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .recurso-icon {
-            font-size: 1.8rem;
-            color: var(--azul-grecia-vibrante);
-            margin-bottom: 12px;
-        }
-
-        .card-recurso h3 {
-            font-size: 1rem;
-            margin-bottom: 6px;
-        }
-
-        .card-recurso p {
-            font-size: 0.85rem;
-            color: var(--texto-secundario);
-        }
-
-        /* DEPOIMENTOS REALISTAS COM FOTO, CIDADE E NOTAS FRACIONADAS */
-        .grid-depoimentos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .card-depoimento {
-            background: var(--branco);
-            border: 1px solid var(--borda-suave);
+        /* E-mail Profissional Feature */
+        .feature-box {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            padding: 40px;
+            margin: 40px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .feature-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .email-demo {
+            background: #090d16;
+            padding: 24px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            font-family: monospace;
+            color: var(--accent);
+            font-size: 1.05rem;
+        }
+
+        /* Grade de Depoimentos (2x3) */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            justify-content: space-between;
         }
 
-        .foto-cliente {
-            width: 70px;
-            height: 70px;
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 12px;
-            border: 3px solid var(--cinza-suave-fundo);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .nome-cliente {
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--texto-principal);
+        .user-info h4 {
+            font-size: 0.95rem;
         }
 
-        .empresa-cliente {
-            font-size: 0.8rem;
-            color: var(--texto-secundario);
-            margin-bottom: 2px;
+        .user-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
-        .cidade-cliente {
-            font-size: 0.78rem;
-            color: #64748b;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .nota-estrelas {
+        .rating-box {
             display: flex;
             align-items: center;
-            gap: 6px;
-            margin-bottom: 12px;
-            font-weight: 800;
-            font-size: 0.95rem;
-            color: var(--texto-principal);
+            gap: 8px;
+            margin-top: 12px;
         }
 
-        .estrelas-icons {
-            color: var(--amarelo-estrela);
-            font-size: 0.85rem;
+        .stars {
+            color: #f59e0b;
         }
 
-        .texto-depoimento {
-            font-size: 0.88rem;
-            color: var(--texto-secundario);
-            font-style: italic;
-            line-height: 1.5;
-        }
-
-        /* FAQ ACORDEÃO INTERATIVO (+/-) */
+        /* FAQ Sanfona Accordion */
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
 
         .faq-item {
-            background: var(--branco);
-            border: 1px solid var(--borda-suave);
+            background: var(--bg-card);
             border-radius: 10px;
             margin-bottom: 12px;
+            border: 1px solid var(--border-color);
             overflow: hidden;
         }
 
-        .faq-pergunta {
-            padding: 18px 22px;
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--texto-principal);
+        .faq-question {
+            width: 100%;
+            padding: 20px;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            user-select: none;
-            transition: background 0.2s;
         }
 
-        .faq-pergunta:hover {
-            background: #f8fafc;
+        .faq-icon {
+            font-size: 1.4rem;
+            transition: transform 0.3s;
         }
 
-        .faq-icone {
-            font-size: 1.2rem;
-            color: var(--azul-grecia-vibrante);
-            font-weight: 800;
-        }
-
-        .faq-resposta {
+        .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
-            background: #fafafa;
-            padding: 0 22px;
-            font-size: 0.92rem;
-            color: var(--texto-secundario);
-            border-top: 1px solid transparent;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 20px;
+            color: var(--text-muted);
         }
 
-        .faq-item.ativo .faq-resposta {
-            max-height: 300px;
-            padding: 18px 22px;
-            border-top-color: var(--borda-suave);
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 20px 20px 20px;
         }
 
-        /* FORMULÁRIO DE CONTATO LIMPO */
-        .secao-form {
-            background: var(--branco);
-            padding: 40px;
-            border-radius: 18px;
-            border: 1px solid var(--borda-suave);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-            max-width: 700px;
-            margin: 0 auto;
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 14px 16px;
-            border-radius: 8px;
-            border: 1px solid #cbd5e1;
-            background: #f8fafc;
-            font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        input:focus, textarea:focus {
-            border-color: var(--azul-grecia-vibrante);
-            background: var(--branco);
-        }
-
-        .btn-enviar {
-            background: var(--azul-escuro-logo);
-            color: var(--branco);
-            border: none;
-            padding: 15px;
-            font-weight: 700;
-            font-size: 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn-enviar:hover {
-            background-color: var(--azul-grecia-vibrante);
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            font-size: 0.85rem;
-            background-color: var(--azul-escuro-logo);
-            color: #94a3b8;
-            margin-top: 50px;
-        }
-
-        /* WIDGET DE ATENDIMENTO DINÂMICO - CANTO INFERIOR DIREITO */
-        .widget-atendimento {
+        /* Widget de Suporte Interativo */
+        .widget-container {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            
-            /* Animação inicial de subida conjunta */
-            transform: translateY(180px);
-            opacity: 0;
-            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
         }
 
-        .widget-atendimento.visivel {
+        .widget-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            width: 300px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            margin-bottom: 12px;
+            transform: translateY(30px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .widget-box.show {
             transform: translateY(0);
             opacity: 1;
+            visibility: visible;
         }
 
-        .balao-conversa {
-            background: var(--branco);
-            border: 1px solid var(--borda-suave);
-            border-radius: 14px;
-            padding: 14px 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-            width: 250px;
+        .widget-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 12px;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
 
-        .balao-conversa:hover {
-            box-shadow: 0 12px 28px rgba(0,0,0,0.22);
-        }
-
-        .btn-fechar-balao {
-            position: absolute;
-            top: 6px;
-            right: 10px;
+        .close-btn {
             background: none;
             border: none;
-            color: #94a3b8;
-            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-size: 1.3rem;
             cursor: pointer;
-            font-weight: bold;
-            padding: 2px 6px;
-            z-index: 2;
         }
 
-        .btn-fechar-balao:hover {
-            color: var(--vermelho-erro);
-        }
-
-        .balao-texto {
-            font-size: 0.88rem;
-            color: var(--texto-principal);
-            margin-top: 4px;
-            line-height: 1.4;
-            font-weight: 500;
-        }
-
-        .avatar-wrapper {
+        .avatar-trigger {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             position: relative;
-            width: 65px;
-            height: 65px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
-        .avatar-wrapper:hover {
-            transform: scale(1.08);
-        }
-
-        .avatar-rosto {
+        .avatar-trigger img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            object-position: center top;
-            border: 3px solid var(--branco);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.22);
         }
 
-        .bolinha-verde-online {
+        .online-dot {
             position: absolute;
             top: 2px;
             right: 2px;
-            width: 15px;
-            height: 15px;
-            background-color: var(--verde-sucesso);
-            border: 2px solid var(--branco);
+            width: 14px;
+            height: 14px;
+            background: #10b981;
+            border: 2px solid var(--bg-dark);
             border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        .widget-atendimento.recolhido .balao-conversa {
-            display: none;
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
-    <!-- CABEÇALHO COM ESCUDO VETORIAL SVG (SEM QUADRADO DE FUNDO) -->
+    <!-- Header / Logo Aegina Tech com Escudo SVG e Fundo Transparente -->
     <header>
         <a href="#" class="logo-container">
-            <svg class="escudo-svg" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 5L10 25V60C10 85 50 115 50 115C50 115 90 85 90 60V25L50 5Z" fill="#0066CC" stroke="#38BDF8" stroke-width="4"/>
-                <path d="M50 20L25 35V60C25 78 50 98 50 98C50 98 75 78 75 60V35L50 20Z" fill="#0B1320"/>
-                <path d="M40 50L50 40L60 50L50 75L40 50Z" fill="#38BDF8"/>
+            <svg class="logo-svg" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 5 L90 25 V60 C90 85 50 110 50 110 C50 110 10 85 10 60 V25 Z" fill="#1e293b" stroke="#3b82f6" stroke-width="6"/>
+                <path d="M50 25 L75 38 V60 C75 75 50 92 50 92 C50 92 25 75 25 60 V38 Z" fill="url(#grad)"/>
+                <defs>
+                    <linearGradient id="grad" x1="25" y1="25" x2="75" y2="92" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#3b82f6"/>
+                        <stop offset="1" stop-color="#1d4ed8"/>
+                    </linearGradient>
+                </defs>
             </svg>
-            <div class="brand-text">
-                <span class="brand-name">AEGINA <span>TECH</span></span>
-                <span class="brand-sub">SITES PROFISSIONAIS</span>
-            </div>
+            <span class="brand-name">AEGINA TECH</span>
         </a>
-        
-        <div class="redes-topo">
-            <a href="https://wa.me/5511995793435" target="_blank" class="icon-topo" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="https://instagram.com" target="_blank" class="icon-topo" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://facebook.com" target="_blank" class="icon-topo" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        </div>
     </header>
 
-    <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Transforme sua Presença Digital em um Imã de Clientes</h1>
+        <p>Desenvolvimento web sob medida com performance extrema, design moderno e suporte dedicado para o seu negócio.</p>
+    </section>
 
-        <!-- HERO PRINCIPAL -->
-        <div class="hero-card">
-            <h1>Criação de Sites <span>Profissionais</span> e de Alta Performance</h1>
-            <p>Desenvolvemos sites sob medida, rápidos e totalmente otimizados para destacar sua empresa no Google e converter visitantes em novos clientes.</p>
-            <a href="#contato" class="btn-hero"><i class="fa-solid fa-paper-plane"></i> Solicitar Orçamento Gratuito</a>
+    <!-- Carrossel Rotativo Automático (Muda a cada 7s) -->
+    <section class="container">
+        <h2 class="section-title">Modelos em Destaque</h2>
+        <p class="section-subtitle">Alternância automática a cada 7 segundos</p>
+
+        <div class="carousel-container">
+            <div class="carousel-slides" id="carouselSlides">
+                <!-- Slide 1: Advocacia -->
+                <div class="slide">
+                    <div class="slide-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" alt="Advocacia" class="slide-img">
+                    </div>
+                    <div class="slide-content">
+                        <h3>Advocacia & Jurídico</h3>
+                        <p>Layout sóbrio, elegante e imponente. Transmita credibilidade e autoridade total aos seus clientes desde o primeiro acesso.</p>
+                        <button class="btn-primary">Solicitar Modelo</button>
+                    </div>
+                </div>
+                <!-- Slide 2: Odontologia -->
+                <div class="slide">
+                    <div class="slide-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Odontologia" class="slide-img">
+                    </div>
+                    <div class="slide-content">
+                        <h3>Odontologia & Saúde</h3>
+                        <p>Design moderno, higiênico e otimizado para agendamento direto de consultas com atalho para WhatsApp.</p>
+                        <button class="btn-primary">Solicitar Modelo</button>
+                    </div>
+                </div>
+                <!-- Slide 3: Beleza -->
+                <div class="slide">
+                    <div class="slide-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Beleza" class="slide-img">
+                    </div>
+                    <div class="slide-content">
+                        <h3>Beleza & Estética</h3>
+                        <p>Visual sofisticado para clínicas de estética, salões e spas. Exiba seus procedimentos e portfólio em alta resolução.</p>
+                        <button class="btn-primary">Solicitar Modelo</button>
+                    </div>
+                </div>
+                <!-- Slide 4: Construção -->
+                <div class="slide">
+                    <div class="slide-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80" alt="Construção" class="slide-img">
+                    </div>
+                    <div class="slide-content">
+                        <h3>Construção & Engenharia</h3>
+                        <p>Estrutura sólida para apresentar obras executadas, projetos arquitetônicos e captação de orçamentos.</p>
+                        <button class="btn-primary">Solicitar Modelo</button>
+                    </div>
+                </div>
+                <!-- Slide 5: Pizzaria -->
+                <div class="slide">
+                    <div class="slide-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" alt="Pizzaria" class="slide-img">
+                    </div>
+                    <div class="slide-content">
+                        <h3>Pizzaria & Delivery</h3>
+                        <p>Cardápio digital leve e atraente com imagens destacadas e botão direto para pedir no WhatsApp ou App.</p>
+                        <button class="btn-primary">Solicitar Modelo</button>
+                    </div>
+                </div>
+                <!-- Slide 6: Pet Shop -->
+                <div class="slide">
+                    <div class="slide-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80" alt="Pet Shop" class="slide-img">
+                    </div>
+                    <div class="slide-content">
+                        <h3>Pet Shop & Veterinária</h3>
+                        <p>Design acolhedor e intuitivo para agendamento de banho e tosa, vacinas e catálogo de produtos pet.</p>
+                        <button class="btn-primary">Solicitar Modelo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-controls" id="carouselDots">
+                <div class="dot active" onclick="goToSlide(0)"></div>
+                <div class="dot" onclick="goToSlide(1)"></div>
+                <div class="dot" onclick="goToSlide(2)"></div>
+                <div class="dot" onclick="goToSlide(3)"></div>
+                <div class="dot" onclick="goToSlide(4)"></div>
+                <div class="dot" onclick="goToSlide(5)"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid 2x3 de Modelos Visuais -->
+    <section class="container">
+        <h2 class="section-title">Nossos Modelos Visuais</h2>
+        <p class="section-subtitle">Escolha o layout perfeito para alavancar seu negócio</p>
+
+        <div class="models-grid">
+            <!-- Modelo 1 -->
+            <div class="model-card">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="Advocacia">
+                <div class="model-card-body">
+                    <h3 class="model-card-title">Advocacia & Jurídico</h3>
+                    <p class="model-card-desc">Escritórios de advocacia e consultoria jurídica com postura institucional de prestígio.</p>
+                    <button class="btn-primary">Solicitar Modelo</button>
+                </div>
+            </div>
+            <!-- Modelo 2 -->
+            <div class="model-card">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Odontologia">
+                <div class="model-card-body">
+                    <h3 class="model-card-title">Odontologia & Saúde</h3>
+                    <p class="model-card-desc">Clínicas médicas e odontológicas com foco em agendamentos fáceis e rápidos.</p>
+                    <button class="btn-primary">Solicitar Modelo</button>
+                </div>
+            </div>
+            <!-- Modelo 3 -->
+            <div class="model-card">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Beleza">
+                <div class="model-card-body">
+                    <h3 class="model-card-title">Beleza & Estética</h3>
+                    <p class="model-card-desc">Centros estéticos, salões e profissionais de beleza com galeria de transformações.</p>
+                    <button class="btn-primary">Solicitar Modelo</button>
+                </div>
+            </div>
+            <!-- Modelo 4 -->
+            <div class="model-card">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=600&q=80" alt="Construção">
+                <div class="model-card-body">
+                    <h3 class="model-card-title">Construção & Engenharia</h3>
+                    <p class="model-card-desc">Empresas de engenharia e construtoras apresentando catálogo de obras e serviços.</p>
+                    <button class="btn-primary">Solicitar Modelo</button>
+                </div>
+            </div>
+            <!-- Modelo 5 -->
+            <div class="model-card">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="Pizzaria">
+                <div class="model-card-body">
+                    <h3 class="model-card-title">Pizzaria & Delivery</h3>
+                    <p class="model-card-desc">Cardápio interativo e otimizado para celulares com atalho rápido para pedidos.</p>
+                    <button class="btn-primary">Solicitar Modelo</button>
+                </div>
+            </div>
+            <!-- Modelo 6 -->
+            <div class="model-card">
+                <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80" alt="Pet Shop">
+                <div class="model-card-body">
+                    <h3 class="model-card-title">Pet Shop & Veterinária</h3>
+                    <p class="model-card-desc">Clínicas veterinárias e pet shops exibindo serviços de estética animal e cuidados.</p>
+                    <button class="btn-primary">Solicitar Modelo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloco de E-mail Corporativo -->
+    <section class="container">
+        <div class="feature-box">
+            <div>
+                <h2>E-mail Corporativo Profissional</h2>
+                <p style="color: var(--text-muted); margin-top: 15px;">Transmita total autoridade ao se comunicar. Criamos e configuramos contas de e-mail personalizadas com o seu domínio próprio.</p>
+            </div>
+            <div class="email-demo">
+                <div>✉️ contato@suaempresa.com.br</div>
+                <div style="margin-top: 10px;">✉️ suporte@suaempresa.com.br</div>
+                <div style="margin-top: 10px;">✉️ comercial@suaempresa.com.br</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos (Grid 2x3 com Cidade/Estado) -->
+    <section class="container">
+        <h2 class="section-title">O que dizem nossos clientes</h2>
+        <p class="section-subtitle">Aprovação garantida por quem já acelerou com a Aegina Tech</p>
+
+        <div class="testimonials-grid">
+            <!-- 1 -->
+            <div class="testimonial-card">
+                <p>"O site ficou impecável e trouxe uma credibilidade imensa para o meu escritório de advocacia."</p>
+                <div>
+                    <div class="rating-box">
+                        <span class="stars">★★★★★</span>
+                        <strong>4.9/5</strong>
+                    </div>
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" class="avatar" alt="Cliente">
+                        <div class="user-info">
+                            <h4>Dra. Mariana Silva</h4>
+                            <p>Silva & Associados • São Paulo/SP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="testimonial-card">
+                <p>"A facilidade de agendamento no site aumentou bastante a nossa demanda da clínica."</p>
+                <div>
+                    <div class="rating-box">
+                        <span class="stars">★★★★★</span>
+                        <strong>4.8/5</strong>
+                    </div>
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" class="avatar" alt="Cliente">
+                        <div class="user-info">
+                            <h4>Dr. Roberto Lima</h4>
+                            <p>Sorriso Real • Rio de Janeiro/RJ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="testimonial-card">
+                <p>"Design maravilhoso e super fácil das clientes marcarem horários. Recomendo demais!"</p>
+                <div>
+                    <div class="rating-box">
+                        <span class="stars">★★★★★</span>
+                        <strong>5.0/5</strong>
+                    </div>
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80" class="avatar" alt="Cliente">
+                        <div class="user-info">
+                            <h4>Carla Mendes</h4>
+                            <p>Luxe Estética • Belo Horizonte/MG</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="testimonial-card">
+                <p>"A apresentação dos portfólios de obras ficou sensacional. Excelente trabalho técnico."</p>
+                <div>
+                    <div class="rating-box">
+                        <span class="stars">★★★★★</span>
+                        <strong>4.9/5</strong>
+                    </div>
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" class="avatar" alt="Cliente">
+                        <div class="user-info">
+                            <h4>Eng. Fernando Rocha</h4>
+                            <p>Rocha Engenharia • Curitiba/PR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="testimonial-card">
+                <p>"Os pedidos pelo WhatsApp aumentaram expressivamente. O cardápio é super leve e bonito!"</p>
+                <div>
+                    <div class="rating-box">
+                        <span class="stars">★★★★★</span>
+                        <strong>4.8/5</strong>
+                    </div>
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=100&q=80" class="avatar" alt="Cliente">
+                        <div class="user-info">
+                            <h4>Giovanni Rossi</h4>
+                            <p>Bella Pizza • Porto Alegre/RS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="testimonial-card">
+                <p>"Muito fácil para agendar banho e tosa. Atendimento impecável durante todo o projeto!"</p>
+                <div>
+                    <div class="rating-box">
+                        <span class="stars">★★★★★</span>
+                        <strong>5.0/5</strong>
+                    </div>
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" class="avatar" alt="Cliente">
+                        <div class="user-info">
+                            <h4>Aline Castro</h4>
+                            <p>Pet Love • Florianópolis/SC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion (Sanfona Interativa) -->
+    <section class="container">
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <p class="section-subtitle">Esclareça suas dúvidas técnicas e comerciais</p>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Qual o prazo de entrega do projeto?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>O prazo padrão de desenvolvimento e finalização é de <strong>15 a 20 dias úteis</strong> após a entrega de todos os conteúdos e alinhamentos por parte do cliente.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Quais são as formas de pagamento aceitas?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Facilitamos o pagamento de acordo com sua preferência: <strong>Sem juros via PIX, Boleto e Depósito bancário</strong>, ou em até <strong>5x no Cartão de Crédito (com juros da operadora)</strong>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>O site funciona perfeitamente em celulares?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sim! Todos os projetos são 100% responsivos, desenvolvidos com foco em dispositivos móveis para carregar rápido em qualquer celular ou tablet.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Posso ter meu e-mail personalizado no meu domínio?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sim! Configuramos suas caixas de e-mail institucionais (ex: contato@suaempresa.com.br) para dar imagem totalmente corporativa ao seu negócio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Widget de Suporte com Animação + Áudio -->
+    <div class="widget-container">
+        <div class="widget-box" id="widgetBox">
+            <div class="widget-header">
+                <strong style="color: #60a5fa;">Atendimento Online</strong>
+                <button class="close-btn" id="closeWidgetBtn">&times;</button>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">Olá! Como podemos ajudar com a criação do seu novo site?</p>
+            <button class="btn-primary" style="width: 100%; text-align: center;">Falar no WhatsApp</button>
         </div>
 
-        <!-- PASSO A PASSO DE CONTRATAÇÃO -->
-        <section class="secao">
-            <div class="titulo-secao">
-                <h2><i class="fa-solid fa-list-check"></i> Como Funciona o Processo</h2>
-                <p class="subtitulo-secao">Veja como é simples ter o seu site profissional no ar</p>
-            </div>
-
-            <div class="grid-passos">
-                <div class="card-passo">
-                    <div class="num-passo">01</div>
-                    <h3>Escolha o Formato</h3>
-                    <p style="font-size: 0.9rem; color: var(--texto-secundario); margin-top: 8px;">Defina a estrutura ideal para a sua empresa: Landing Page, Site Institucional ou Loja Virtual.</p>
-                </div>
-
-                <div class="card-passo">
-                    <div class="num-passo">02</div>
-                    <h3>Personalização & Conteúdo</h3>
-                    <p style="font-size: 0.9rem; color: var(--texto-secundario); margin-top: 8px;">Nossa equipe aplica a identidade visual da sua marca com textos persuasivos e imagens marcantes.</p>
-                </div>
-
-                <div class="card-passo">
-                    <div class="num-passo">03</div>
-                    <h3>Lançamento & Resultados</h3>
-                    <p style="font-size: 0.9rem; color: var(--texto-secundario); margin-top: 8px;">Publicamos seu site com botão direto para WhatsApp, SEO otimizado e velocidade máxima.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PORTFÓLIO VISUAL COM IMAGENS REAIS -->
-        <section class="secao">
-            <div class="titulo-secao">
-                <h2><i class="fa-solid fa-laptop-code"></i> Modelos & Projetos de Exemplo</h2>
-                <p class="subtitulo-secao">Conheça algumas das estruturas desenvolvidas sob medida para nossos clientes</p>
-            </div>
-
-            <div class="grid-portfolio">
-                <div class="card-portfolio">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="Site para Advocacia" class="portfolio-thumb">
-                    <div class="portfolio-body">
-                        <span class="portfolio-tag">Advocacia & Jurídico</span>
-                        <h3 class="portfolio-title">Escritório Advocatício</h3>
-                        <p class="portfolio-desc">Design sóbrio e elegante focado na captação de clientes e apresentação de especialidades.</p>
-                        <a href="#contato" class="btn-ver-modelo"><i class="fa-solid fa-eye"></i> Solicitar Modelo</a>
-                    </div>
-                </div>
-
-                <div class="card-portfolio">
-                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Site para Estética" class="portfolio-thumb">
-                    <div class="portfolio-body">
-                        <span class="portfolio-tag">Saúde & Estética</span>
-                        <h3 class="portfolio-title">Clínica & Consultório</h3>
-                        <p class="portfolio-desc">Layout moderno com agendamento rápido de consultas pelo WhatsApp e galeria de tratamentos.</p>
-                        <a href="#contato" class="btn-ver-modelo"><i class="fa-solid fa-eye"></i> Solicitar Modelo</a>
-                    </div>
-                </div>
-
-                <div class="card-portfolio">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Site para Logística" class="portfolio-thumb">
-                    <div class="portfolio-body">
-                        <span class="portfolio-tag">Logística & Serviços</span>
-                        <h3 class="portfolio-title">Transportadora</h3>
-                        <p class="portfolio-desc">Estrutura focada no detalhamento de frotas, serviços de transporte e pedidos de cotação online.</p>
-                        <a href="#contato" class="btn-ver-modelo"><i class="fa-solid fa-eye"></i> Solicitar Modelo</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROBLEMA VS SOLUÇÃO -->
-        <section class="secao">
-            <div class="titulo-secao">
-                <h2><i class="fa-solid fa-scale-balanced"></i> Por que sua Empresa precisa de um Site?</h2>
-            </div>
-
-            <div class="grid-comparativo">
-                <div class="card-comparativo card-problema">
-                    <h3 style="color: #991b1b; margin-bottom: 18px;"><i class="fa-solid fa-xmark"></i> Sem Site Profissional:</h3>
-                    <ul class="lista-comparativa">
-                        <li><i class="fa-solid fa-xmark" style="color: var(--vermelho-erro);"></i> Perde clientes para concorrentes melhor posicionados</li>
-                        <li><i class="fa-solid fa-xmark" style="color: var(--vermelho-erro);"></i> Depende apenas de redes sociais para ser encontrado</li>
-                        <li><i class="fa-solid fa-xmark" style="color: var(--vermelho-erro);"></i> Falta de credibilidade perante grandes contratantes</li>
-                    </ul>
-                </div>
-
-                <div class="card-comparativo card-solucao">
-                    <h3 style="color: #166534; margin-bottom: 18px;"><i class="fa-solid fa-check"></i> Com a Aegina Tech:</h3>
-                    <ul class="lista-comparativa">
-                        <li><i class="fa-solid fa-check" style="color: var(--verde-sucesso);"></i> Presença online ativa 24h por dia gerando contatos</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--verde-sucesso);"></i> Layout rápido, moderno e 100% otimizado para celulares</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--verde-sucesso);"></i> Domínio próprio e e-mail profissional para passar confiança</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- FUNCIONALIDADES / INCLUSOS -->
-        <section class="secao">
-            <div class="titulo-secao">
-                <h2><i class="fa-solid fa-gears"></i> Recursos Inclusos em Todos os Projetos</h2>
-            </div>
-
-            <div class="grid-recursos">
-                <div class="card-recurso">
-                    <div class="recurso-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-                    <h3>100% Responsivo</h3>
-                    <p>Navegação perfeita adaptada para celulares, tablets e computadores.</p>
-                </div>
-
-                <div class="card-recurso">
-                    <div class="recurso-icon"><i class="fa-solid fa-lock"></i></div>
-                    <h3>Certificado SSL Grátis</h3>
-                    <p>Criptografia de segurança com o selo de site seguro para seus visitantes.</p>
-                </div>
-
-                <div class="card-recurso">
-                    <div class="recurso-icon"><i class="fa-brands fa-whatsapp"></i></div>
-                    <h3>Botão WhatsApp Direto</h3>
-                    <p>Facilite o contato do cliente direcionando a conversa em um único clique.</p>
-                </div>
-
-                <div class="card-recurso">
-                    <div class="recurso-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <h3>Otimização SEO</h3>
-                    <p>Estruturado com as melhores práticas para boa indexação nas buscas do Google.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- DEPOIMENTOS REALISTAS DE CLIENTES -->
-        <section class="secao">
-            <div class="titulo-secao">
-                <h2><i class="fa-solid fa-comments"></i> Avaliações dos Nossos Clientes</h2>
-                <p class="subtitulo-secao">Veja o que dizem os empresários que confiaram em nossos serviços</p>
-            </div>
-
-            <div class="grid-depoimentos">
-                <div class="card-depoimento">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Cliente Vania" class="foto-cliente">
-                    <div class="nome-cliente">Vania Fernandes</div>
-                    <div class="empresa-cliente">Work Safety</div>
-                    <div class="cidade-cliente">São Paulo - SP</div>
-                    <div class="nota-estrelas">
-                        5.0 <div class="estrelas-icons"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    </div>
-                    <p class="texto-depoimento">"A equipe me atendeu super bem desde o início. Desenhamos a estrutura juntos e o site ficou pronto antes do prazo combinado!"</p>
-                </div>
-
-                <div class="card-depoimento">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Cliente Alex" class="foto-cliente">
-                    <div class="nome-cliente">Alex Simon</div>
-                    <div class="empresa-cliente">Minas Logística</div>
-                    <div class="cidade-cliente">Belo Horizonte - MG</div>
-                    <div class="nota-estrelas">
-                        4.8 <div class="estrelas-icons"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
-                    </div>
-                    <p class="texto-depoimento">"Empresa séria e comprometida. Fizeram todos os ajustes que pedi e os clientes elogiam bastante a velocidade do nosso site."</p>
-                </div>
-
-                <div class="card-depoimento">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Cliente Nathalia" class="foto-cliente">
-                    <div class="nome-cliente">Nathalia Marques</div>
-                    <div class="empresa-cliente">Ateliê Doce Sabor</div>
-                    <div class="cidade-cliente">Campinas - SP</div>
-                    <div class="nota-estrelas">
-                        4.9 <div class="estrelas-icons"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    </div>
-                    <p class="texto-depoimento">"Muito satisfeita com o resultado! O layout ficou leve, lindo no celular e o atendimento no suporte sempre nota 10."</p>
-                </div>
-
-                <div class="card-depoimento">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Cliente Diego" class="foto-cliente">
-                    <div class="nome-cliente">Diego Silva</div>
-                    <div class="empresa-cliente">Adonai Treinamentos</div>
-                    <div class="cidade-cliente">Curitiba - PR</div>
-                    <div class="nota-estrelas">
-                        4.7 <div class="estrelas-icons"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
-                    </div>
-                    <p class="texto-depoimento">"O suporte é direto e humano sem burocracia. Excelente investimento para posicionar a marca na internet."</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ ACORDEÃO INTERATIVO (+ / -) -->
-        <section class="secao">
-            <div class="titulo-secao">
-                <h2><i class="fa-solid fa-circle-question"></i> Dúvidas Frequentes</h2>
-                <p class="subtitulo-secao">Clique na pergunta para abrir a resposta</p>
-            </div>
-
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-pergunta" onclick="toggleFaq(this)">
-                        Quais são as formas de pagamento disponíveis?
-                        <span class="faq-icone">+</span>
-                    </div>
-                    <div class="faq-resposta">
-                        Aceitamos pagamento via Pix ou Boleto Bancário (50% no início do projeto e 50% na entrega), ou parcelado em até 6x no Cartão de Crédito.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-pergunta" onclick="toggleFaq(this)">
-                        Em quanto tempo o meu site fica pronto?
-                        <span class="faq-icone">+</span>
-                    </div>
-                    <div class="faq-resposta">
-                        O prazo médio para entrega de uma Landing Page ou Site Institucional é de 5 a 10 dias úteis, contados após o envio de todo o conteúdo inicial da empresa.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-pergunta" onclick="toggleFaq(this)">
-                        O site funciona perfeitamente no celular?
-                        <span class="faq-icone">+</span>
-                    </div>
-                    <div class="faq-resposta">
-                        Sim! Todos os nossos sites são desenvolvidos com tecnologia 100% responsiva, garantindo visualização perfeita e rápida em celulares, tablets e computadores.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-pergunta" onclick="toggleFaq(this)">
-                        Eu poderei alterar informações no futuro?
-                        <span class="faq-icone">+</span>
-                    </div>
-                    <div class="faq-resposta">
-                        Com certeza. Desenvolvemos o site em uma estrutura fácil de gerenciar para que você consiga editar textos e fotos de maneira simples.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FORMULÁRIO DE CONTATO OBJETIVO -->
-        <section class="secao-form" id="contato">
-            <div class="titulo-secao" style="margin-bottom: 25px;">
-                <h2><i class="fa-solid fa-paper-plane"></i> Solicitar Orçamento</h2>
-                <p class="subtitulo-secao">Preencha abaixo para receber uma proposta rápida</p>
-            </div>
-            
-            <form action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="SUA_CHAVE_AQUI">
-
-                <input type="text" name="name" placeholder="Seu Nome" required>
-                <input type="email" name="email" placeholder="Seu E-mail" required>
-                <input type="tel" name="phone" placeholder="Seu WhatsApp com DDD" required>
-                <textarea name="message" rows="4" placeholder="Conte brevemente sobre o site que você precisa..." required></textarea>
-
-                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
-            </form>
-        </section>
-
+        <div class="avatar-trigger" id="avatarTrigger">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Suporte Aegina Tech">
+            <div class="online-dot"></div>
+        </div>
     </div>
 
-    <!-- WIDGET DE ATENDIMENTO DINÂMICO (CANTO INFERIOR DIREITO) -->
-    <div class="widget-atendimento" id="widgetAtendimento">
-        
-        <!-- BALÃO DE CONVERSA -->
-        <div class="balao-conversa" onclick="abrirWhatsApp()">
-            <button class="btn-fechar-balao" onclick="fecharWidget(event)" title="Fechar">✕</button>
-            <div class="balao-texto">
-                Olá! Tudo bem? Posso te ajudar a escolher o site ideal para o seu negócio!
-            </div>
-        </div>
-
-        <!-- FOTO DA ATENDENTE COM SINAL VERDE ONLINE NO TOPO DA FOTO -->
-        <div class="avatar-wrapper" onclick="cliqueAvatar()">
-            <img src="female-customer-support-phone-operator.jpg" alt="Atendimento Aegina Tech" class="avatar-rosto">
-            <div class="bolinha-verde-online"></div>
-        </div>
-
-    </div>
-
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Aegina Tech - Todos os direitos reservados.</p>
+        <p>&copy; 2026 AEGINA TECH. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- INTERATIVIDADE SCRIPT -->
+    <!-- Scripts de Interatividade -->
     <script>
-        const LINK_WHATSAPP = "https://wa.me/5511995793435?text=Olá!%20Gostaria%20de%20tirar%20uma%20dúvida%20sobre%20os%20sites";
+        // --- 1. Carrossel Rotativo Automático (7 Segundos) ---
+        let currentSlide = 0;
+        const totalSlides = 6;
+        const slidesContainer = document.getElementById('carouselSlides');
+        const dots = document.querySelectorAll('.dot');
 
-        // LÓGICA DO FAQ ACORDEÃO (+ / -)
-        function toggleFaq(elemento) {
-            const itemAtual = elemento.parentElement;
-            const todosItens = document.querySelectorAll('.faq-item');
-
-            todosItens.forEach(item => {
-                if (item !== itemAtual) {
-                    item.classList.remove('ativo');
-                    const icone = item.querySelector('.faq-icone');
-                    if (icone) icone.textContent = '+';
-                }
-            });
-
-            itemAtual.classList.toggle('ativo');
-            const iconeAtual = itemAtual.querySelector('.faq-icone');
-            if (iconeAtual) {
-                iconeAtual.textContent = itemAtual.classList.contains('ativo') ? '−' : '+';
-            }
+        function goToSlide(index) {
+            currentSlide = index;
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
         }
 
-        // BEEP SONORO NATIVO
-        function tocarSomBip() {
-            try {
-                const AudioContext = window.AudioContext || window.webkitAudioContext;
-                if (!AudioContext) return;
-                const ctx = new AudioContext();
+        let autoRotate = setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        }, 7000);
+
+        // --- 2. FAQ Accordion (Sanfona - Fecha anteriores ao abrir novo) ---
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const btn = item.querySelector('.faq-question');
+            btn.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
                 
+                // Fecha todos os itens abertos
+                faqItems.forEach(f => f.classList.remove('active'));
+
+                // Abre o clicado se não estava ativo
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // --- 3. Widget de Suporte (Subida com Animação + Áudio + Botão Fechar) ---
+        const widgetBox = document.getElementById('widgetBox');
+        const closeBtn = document.getElementById('closeWidgetBtn');
+        const avatarTrigger = document.getElementById('avatarTrigger');
+
+        function playSound() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
                 const osc = ctx.createOscillator();
                 const gain = ctx.createGain();
-                
                 osc.type = 'sine';
-                osc.frequency.setValueAtTime(880, ctx.currentTime);
+                osc.frequency.setValueAtTime(587.33, ctx.currentTime);
                 gain.gain.setValueAtTime(0.1, ctx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
-                
                 osc.connect(gain);
                 gain.connect(ctx.destination);
-                
                 osc.start();
-                osc.stop(ctx.currentTime + 0.25);
+                osc.stop(ctx.currentTime + 0.2);
             } catch (e) {}
         }
 
-        // ANIMAÇÃO DO WIDGET DE ATENDIMENTO
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                const widget = document.getElementById('widgetAtendimento');
-                if (widget) {
-                    widget.classList.add('visivel');
-                    tocarSomBip();
-                }
-            }, 2500);
+        // Exibe o widget automaticamente após 2.5s
+        setTimeout(() => {
+            widgetBox.classList.add('show');
+            playSound();
+        }, 2500);
+
+        closeBtn.addEventListener('click', () => {
+            widgetBox.classList.remove('show');
         });
 
-        function fecharWidget(e) {
-            e.stopPropagation();
-            const widget = document.getElementById('widgetAtendimento');
-            if (widget) {
-                widget.classList.remove('visivel');
-                setTimeout(() => {
-                    widget.classList.add('recolhido');
-                    widget.classList.add('visivel');
-                }, 400);
-            }
-        }
-
-        function cliqueAvatar() {
-            const widget = document.getElementById('widgetAtendimento');
-            if (widget.classList.contains('recolhido')) {
-                widget.classList.remove('visivel');
-                setTimeout(() => {
-                    widget.classList.remove('recolhido');
-                    widget.classList.add('visivel');
-                    tocarSomBip();
-                }, 200);
-            } else {
-                abrirWhatsApp();
-            }
-        }
-
-        function abrirWhatsApp() {
-            window.open(LINK_WHATSAPP, '_blank');
-        }
+        avatarTrigger.addEventListener('click', () => {
+            widgetBox.classList.toggle('show');
+        });
     </script>
 </body>
 </html>
