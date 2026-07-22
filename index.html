@@ -20,8 +20,6 @@
             --texto-principal: #0f172a;
             --texto-secundario: #475569;
             --whatsapp-cor: #25d366;
-            --instagram-cor: #e1306c;
-            --facebook-cor: #1877f2;
             --borda-suave: #e2e8f0;
             --vermelho-erro: #ef4444;
             --verde-sucesso: #10b981;
@@ -40,23 +38,43 @@
             line-height: 1.6;
         }
 
-        /* HEADER */
+        /* HEADER COM ÍCONES SUPER COMPACTOS NO TOPO DIREITO */
         header {
             background-color: var(--azul-escuro-logo);
             color: var(--branco);
-            padding: 15px 5%;
-            text-align: center;
+            padding: 12px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             border-bottom: 3px solid var(--azul-grecia-vibrante);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .logo-header {
-            max-width: 160px;
+            max-width: 140px;
             height: auto;
             display: block;
-            margin: 0 auto;
+        }
+
+        /* REDES SOCIAIS MINIMALISTAS NO TOPO DIREITO (SILHUETAS ~5 a 7mm) */
+        .redes-topo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icon-topo {
+            color: #94a3b8;
+            font-size: 0.95rem; /* Silhueta discreta */
+            text-decoration: none;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .icon-topo:hover {
+            color: var(--branco);
+            transform: scale(1.15);
         }
 
         .container {
@@ -264,142 +282,6 @@
             background-color: var(--azul-grecia-vibrante);
         }
 
-        /* REDES SOCIAIS MINIMALISTAS E COMPACTAS (APENAS BOLA COM ÍCONE) */
-        .redes-sociais-min {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
-
-        .icon-btn-social {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--branco);
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .icon-btn-social.whats { background-color: var(--whatsapp-cor); }
-        .icon-btn-social.insta { background-color: var(--instagram-cor); }
-        .icon-btn-social.face  { background-color: var(--facebook-cor); }
-
-        .icon-btn-social:hover {
-            transform: translateY(-3px) scale(1.08);
-        }
-
-        /* WIDGET CHAT ANIMADO (DO LADO ESQUERDO COM AULAS DE UX) */
-        .chat-widget-container {
-            position: fixed;
-            bottom: -200px; /* Começa escondido */
-            left: 20px;     /* Posicionado no Canto Esquerdo */
-            z-index: 9999;
-            transition: bottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .chat-widget-container.ativo {
-            bottom: 20px; /* Sobe com animação */
-        }
-
-        .chat-box-wrapper {
-            background: var(--branco);
-            border: 1px solid var(--borda-suave);
-            border-radius: 16px;
-            padding: 16px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-            width: 290px;
-            position: relative;
-            animation: bip-bounce 2s infinite ease-in-out;
-        }
-
-        @keyframes bip-bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-
-        .btn-fechar-chat {
-            position: absolute;
-            top: 8px;
-            right: 12px;
-            background: transparent;
-            border: none;
-            color: #94a3b8;
-            font-size: 1.1rem;
-            cursor: pointer;
-            font-weight: bold;
-            padding: 4px;
-        }
-
-        .btn-fechar-chat:hover {
-            color: var(--vermelho-erro);
-        }
-
-        .chat-header-user {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-
-        .avatar-headset {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--verde-sucesso);
-        }
-
-        .chat-user-details h5 {
-            font-size: 0.9rem;
-            color: var(--azul-escuro-logo);
-            margin-bottom: 2px;
-        }
-
-        .chat-user-details span {
-            font-size: 0.75rem;
-            color: var(--verde-sucesso);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .chat-message-text {
-            font-size: 0.85rem;
-            color: var(--texto-secundario);
-            background: #f1f5f9;
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 12px;
-            line-height: 1.35;
-        }
-
-        .btn-chat-whatsapp-action {
-            background-color: var(--whatsapp-cor);
-            color: var(--branco);
-            text-decoration: none;
-            padding: 10px;
-            border-radius: 25px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: background 0.2s;
-        }
-
-        .btn-chat-whatsapp-action:hover {
-            background-color: #1ebc57;
-        }
-
         /* RESERVADO PARA MERCADO PAGO */
         .checkout-box {
             text-align: center;
@@ -417,12 +299,133 @@
             background-color: var(--azul-escuro-logo);
             color: var(--branco);
         }
+
+        /* WIDGET FLUTUANTE DE ATENDIMENTO (CANTO ESQUERDO) */
+        .widget-atendimento {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /* FOTO REDONDA DA ATENDENTE LOIRA COM BOLINHA VERDE DENTRO */
+        .avatar-wrapper {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar-wrapper:hover {
+            transform: scale(1.08);
+        }
+
+        .avatar-rosto {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--branco);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+
+        .bolinha-verde-online {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 14px;
+            height: 14px;
+            background-color: var(--verde-sucesso);
+            border: 2px solid var(--branco);
+            border-radius: 50%;
+        }
+
+        /* BALÃO DE CONVERSA */
+        .balao-conversa {
+            background: var(--branco);
+            border: 1px solid var(--borda-suave);
+            border-radius: 14px;
+            padding: 14px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            width: 260px;
+            margin-bottom: 10px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .balao-conversa.aberto {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .btn-fechar-balao {
+            position: absolute;
+            top: 6px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-fechar-balao:hover {
+            color: var(--vermelho-erro);
+        }
+
+        .balao-texto {
+            font-size: 0.85rem;
+            color: var(--texto-principal);
+            margin-top: 5px;
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }
+
+        .btn-whats-link {
+            background-color: var(--whatsapp-cor);
+            color: var(--branco);
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s;
+        }
+
+        .btn-whats-link:hover {
+            background-color: #1ebc57;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <img src="logo.png" alt="Aegina Tech Logo" class="logo-header">
+        
+        <!-- SILHUETAS DAS REDES SOCIAIS NO TOPO DIREITO -->
+        <div class="redes-topo">
+            <a href="https://wa.me/5511995793435" target="_blank" class="icon-topo" title="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://instagram.com/aeginatech" target="_blank" class="icon-topo" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" class="icon-topo" title="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+        </div>
     </header>
 
     <div class="container">
@@ -547,19 +550,6 @@
             </form>
         </section>
 
-        <!-- REDES SOCIAIS DISCRETAS (SÓ OS ÍCONES REDONDOS) -->
-        <div class="redes-sociais-min">
-            <a href="https://wa.me/5511995793435" target="_blank" class="icon-btn-social whats" title="WhatsApp">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a href="https://instagram.com/aeginatech" target="_blank" class="icon-btn-social insta" title="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://facebook.com" target="_blank" class="icon-btn-social face" title="Facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-        </div>
-
         <!-- CHECKOUT RESERVADO -->
         <div class="checkout-box">
             <p style="font-size: 0.85rem; color: var(--texto-secundario);">Área Reservada para Pagamento (Mercado Pago)</p>
@@ -567,57 +557,88 @@
 
     </div>
 
-    <!-- WIDGET ANIMADO DO CANTO ESQUERDO COM SOM, ATENDENTE DE HEADSET E BOTÃO FECHAR -->
-    <div class="chat-widget-container" id="chatWidget">
-        <div class="chat-box-wrapper">
-            <button class="btn-fechar-chat" onclick="fecharChatWidget()" title="Fechar">✕</button>
-            
-            <div class="chat-header-user">
-                <!-- Foto Humanizada da Atendente com Headset -->
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Atendimento" class="avatar-headset">
-                <div class="chat-user-details">
-                    <h5>Atendimento Aegina</h5>
-                    <span><i class="fa-solid fa-circle" style="font-size: 0.5rem;"></i> Online agora</span>
-                </div>
+    <!-- WIDGET DE ATENDIMENTO COM FOTO REDONDA DE ATENDENTE LOIRA E SOM REATIVO -->
+    <div class="widget-atendimento">
+        
+        <!-- BALÃO DE MENSAGEM -->
+        <div class="balao-conversa" id="balaoChat">
+            <button class="btn-fechar-balao" onclick="fecharBalao(event)" title="Fechar">✕</button>
+            <div class="balao-texto">
+                Olá! Tudo bem? Posso te ajudar a escolher o site ideal para o seu negócio!
             </div>
-
-            <div class="chat-message-text">
-                Olá! Tudo bem? Podemos ajudar você a escolher o modelo ideal para a sua empresa.
-            </div>
-
-            <a href="https://wa.me/5511995793435?text=Olá!%20Gostaria%20de%20tirar%20uma%20dúvida%20sobre%20os%20sites" target="_blank" class="btn-chat-whatsapp-action">
-                <i class="fa-brands fa-whatsapp"></i> Iniciar Conversa
+            <a href="https://wa.me/5511995793435?text=Olá!%20Gostaria%20de%20tirar%20uma%20dúvida%20sobre%20os%20sites" target="_blank" class="btn-whats-link">
+                <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
             </a>
         </div>
+
+        <!-- ROSTO DA ATENDENTE LOIRA COM O SINAL ONLINE DENTRO DO CÍRCULO -->
+        <div class="avatar-wrapper" onclick="toggleBalao()">
+            <!-- Rosto de mulher loira com headset -->
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=150&q=80" alt="Atendimento Aegina Tech" class="avatar-rosto">
+            <div class="bolinha-verde-online"></div>
+        </div>
+
     </div>
 
     <footer>
         <p>&copy; Aegina Tech - Todos os direitos reservados.</p>
     </footer>
 
-    <!-- SCRIPT DE ANIMAÇÃO, ÁUDIO E CONTROLE DO WIDGET -->
+    <!-- SCRIPT DO SOM DE NOTIFICAÇÃO E ANIMAÇÃO DO BALÃO -->
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            // Aguarda 2.5 segundos após carregar a página para subir o balãozinho com efeito
-            setTimeout(() => {
-                const widget = document.getElementById('chatWidget');
-                if (widget) {
-                    widget.classList.add('ativo');
+        // Função para gerar o som de "bip" de notificação usando a Web Audio API do próprio navegador
+        function tocarSomBip() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+                const ctx = new AudioContext();
+                
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(880, ctx.currentTime); // Tom da notificação
+                gain.gain.setValueAtTime(0.1, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+                
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                
+                osc.start();
+                osc.stop(ctx.currentTime + 0.3);
+            } catch (e) {
+                // Silencioso se o navegador restringir
+            }
+        }
 
-                    // Toca o som discreto de bip/notificação de mensagem
-                    try {
-                        const audio = new Audio('https://assets.mixkit.co/active_storage/sfx/2354/2354-preview.mp3');
-                        audio.volume = 0.3;
-                        audio.play().catch(() => {}); // Previne erros de autoplay do navegador
-                    } catch (e) {}
+        window.addEventListener('DOMContentLoaded', () => {
+            // Após 2.5 segundos abre o balão suavemente e toca o som
+            setTimeout(() => {
+                const balao = document.getElementById('balaoChat');
+                if (balao) {
+                    balao.classList.add('aberto');
+                    tocarSomBip();
                 }
             }, 2500);
         });
 
-        function fecharChatWidget() {
-            const widget = document.getElementById('chatWidget');
-            if (widget) {
-                widget.classList.remove('ativo');
+        function fecharBalao(e) {
+            e.stopPropagation();
+            const balao = document.getElementById('balaoChat');
+            if (balao) {
+                balao.classList.remove('aberto');
+            }
+        }
+
+        function toggleBalao() {
+            const balao = document.getElementById('balaoChat');
+            if (balao) {
+                if (balao.classList.contains('aberto')) {
+                    balao.classList.remove('aberto');
+                } else {
+                    balao.classList.add('aberto');
+                    tocarSomBip();
+                }
             }
         }
     </script>
