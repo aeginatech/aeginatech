@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aegina Tech | Criação e Modernização de Sites Profissionais</title>
     
-    <!-- Ícone da aba do navegador (Favicon) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
 
-    <!-- BIBLIOTECA DE ÍCONES (Garante que TODOS os ícones funcionem em qualquer dispositivo) -->
+    <!-- Biblioteca de Ícones (Font Awesome 6.5.1) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* PALETA DE CORES OFICIAL DA AEGINA TECH */
         :root {
-            --azul-escuro-logo: #132235;   /* Tom forte e elegante do escudo */
-            --azul-grecia-vibrante: #005bae;/* Destaque primário */
-            --cinza-suave-fundo: #f4f6f9;  /* Fundo limpo */
+            --azul-escuro-logo: #132235;
+            --azul-grecia-vibrante: #005bae;
+            --cinza-suave-fundo: #f8fafc;
             --branco: #ffffff;
-            --texto-principal: #111827;
-            --texto-secundario: #4b5563;
+            --texto-principal: #0f172a;
+            --texto-secundario: #475569;
             --whatsapp-cor: #25d366;
             --whatsapp-hover: #1ebc57;
             --instagram-cor: #e1306c;
             --facebook-cor: #1877f2;
+            --borda-suave: #e2e8f0;
         }
 
         * {
@@ -39,109 +39,105 @@
             line-height: 1.6;
         }
 
-        /* HEADER AZUL ESCURO IMPACTANTE */
+        /* HEADER */
         header {
             background-color: var(--azul-escuro-logo);
             color: var(--branco);
-            padding: 35px 5%;
+            padding: 25px 5%;
             text-align: center;
-            border-bottom: 4px solid var(--azul-grecia-vibrante);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-bottom: 3px solid var(--azul-grecia-vibrante);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
         .logo-header {
-            max-width: 220px;
+            max-width: 200px;
             height: auto;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             display: block;
             margin-left: auto;
             margin-right: auto;
-            filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.3));
         }
 
         header p {
-            color: #9ca3af;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
+            color: #94a3b8;
+            font-size: 1rem;
             font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
         .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        /* SEÇÕES GERAIS */
-        .secao {
-            background: var(--branco);
-            padding: 35px;
-            border-radius: 12px;
+        /* TITULOS DAS SEÇÕES */
+        .titulo-secao {
+            text-align: center;
             margin-bottom: 35px;
-            box-shadow: 0 4px 15px rgba(19, 34, 53, 0.06);
-            border: 1px solid #e5e7eb;
         }
 
-        h2 {
+        .titulo-secao h2 {
             color: var(--azul-escuro-logo);
-            margin-bottom: 20px;
-            font-size: 1.6rem;
-            border-bottom: 2px solid var(--cinza-suave-fundo);
-            padding-bottom: 10px;
-            display: flex;
+            font-size: 1.8rem;
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
+            margin-bottom: 8px;
         }
 
-        h2 i {
+        .titulo-secao h2 i {
             color: var(--azul-grecia-vibrante);
         }
 
-        /* HERO & VÍDEO */
-        .hero-subtitulo {
-            text-align: center;
-            font-size: 1.1rem;
+        .titulo-secao p {
             color: var(--texto-secundario);
-            margin-bottom: 20px;
+            font-size: 1rem;
         }
 
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            border-radius: 10px;
-            overflow: hidden;
-            background: #000;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-            margin-bottom: 25px;
+        /* CAPA HERO */
+        .hero-card {
+            background: linear-gradient(135deg, #132235 0%, #1e3a5f 100%);
+            color: var(--branco);
+            padding: 50px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(19, 34, 53, 0.15);
+            margin-bottom: 50px;
         }
 
-        video {
-            width: 100%;
-            height: auto;
-            display: block;
+        .hero-card h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
 
-        /* BOTÕES NA HERO SECTION */
+        .hero-card p {
+            color: #cbd5e1;
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto 30px auto;
+        }
+
         .hero-botoes {
             display: flex;
             gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 20px;
         }
 
         .btn-hero {
-            padding: 15px 28px;
+            padding: 14px 26px;
             border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.05rem;
+            font-weight: 600;
+            font-size: 1rem;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
 
         .btn-hero-whats {
@@ -156,44 +152,117 @@
         }
 
         .btn-hero-orcamento {
-            background-color: var(--azul-escuro-logo);
+            background-color: transparent;
             color: var(--branco);
-            border: 2px solid var(--azul-escuro-logo);
+            border: 2px solid var(--branco);
         }
 
         .btn-hero-orcamento:hover {
-            background-color: var(--azul-grecia-vibrante);
-            border-color: var(--azul-grecia-vibrante);
+            background-color: var(--branco);
+            color: var(--azul-escuro-logo);
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 91, 174, 0.25);
         }
 
-        /* GRADE DE SERVIÇOS */
+        /* SHOWROOM / VITRINE DE TEMPLATES */
+        .grid-templates {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .card-template {
+            background: var(--branco);
+            border: 1px solid var(--borda-suave);
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-template:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 91, 174, 0.12);
+            border-color: var(--azul-grecia-vibrante);
+        }
+
+        .template-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 91, 174, 0.08);
+            color: var(--azul-grecia-vibrante);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 15px auto;
+        }
+
+        .card-template h3 {
+            color: var(--azul-escuro-logo);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .card-template p {
+            color: var(--texto-secundario);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-template {
+            background-color: var(--cinza-suave-fundo);
+            color: var(--azul-escuro-logo);
+            border: 1px solid var(--borda-suave);
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .card-template:hover .btn-template {
+            background-color: var(--azul-grecia-vibrante);
+            color: var(--branco);
+            border-color: var(--azul-grecia-vibrante);
+        }
+
+        /* SERVIÇOS MODERNOS (CARDS INTERATIVOS) */
         .grid-servicos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
-            margin-top: 20px;
+            margin-bottom: 50px;
         }
 
         .card-servico {
-            background: var(--cinza-suave-fundo);
-            padding: 22px;
-            border-radius: 8px;
-            border-left: 4px solid var(--azul-escuro-logo);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: var(--branco);
+            border: 1px solid var(--borda-suave);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
         }
 
         .card-servico:hover {
             transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-            border-left-color: var(--azul-grecia-vibrante);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--azul-grecia-vibrante);
         }
 
         .card-servico h3 {
             color: var(--azul-escuro-logo);
             font-size: 1.15rem;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -201,28 +270,54 @@
 
         .card-servico h3 i {
             color: var(--azul-grecia-vibrante);
+            font-size: 1.2rem;
         }
 
-        .card-servico p {
+        .card-servico ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card-servico ul li {
             color: var(--texto-secundario);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-servico ul li i {
+            color: var(--whatsapp-cor);
+            font-size: 0.8rem;
         }
 
         /* FORMULÁRIO DE CONTATO */
+        .secao-form {
+            background: var(--branco);
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid var(--borda-suave);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            margin-bottom: 50px;
+        }
+
         form {
             display: flex;
             flex-direction: column;
             gap: 15px;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         input, textarea {
             width: 100%;
-            padding: 14px;
+            padding: 12px 15px;
             border-radius: 8px;
-            border: 1px solid #d1d5db;
-            background: #f9fafb;
+            border: 1px solid #cbd5e1;
+            background: #f8fafc;
             color: var(--texto-principal);
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: border-color 0.2s;
         }
 
@@ -236,16 +331,16 @@
             background: var(--azul-escuro-logo);
             color: var(--branco);
             border: none;
-            padding: 15px;
-            font-weight: bold;
-            font-size: 1.05rem;
+            padding: 14px;
+            font-weight: 600;
+            font-size: 1rem;
             border-radius: 8px;
             cursor: pointer;
             transition: background 0.2s, transform 0.1s;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .btn-enviar:hover {
@@ -253,29 +348,34 @@
             transform: translateY(-2px);
         }
 
-        /* REDES SOCIAIS E CONTATO DIRETO */
+        /* REDES SOCIAIS (COMPACTAS E PERFEITAMENTE ALINHADAS) */
         .redes-container {
             display: flex;
-            gap: 15px;
+            gap: 12px;
+            justify-content: center;
             flex-wrap: wrap;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .btn-social {
-            flex: 1;
-            min-width: 180px;
-            text-align: center;
-            padding: 14px;
-            border-radius: 8px;
+            padding: 10px 18px;
+            border-radius: 20px;
             text-decoration: none;
             color: var(--branco);
-            font-weight: bold;
-            font-size: 1rem;
-            display: flex;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            transition: opacity 0.2s, transform 0.1s;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .btn-social i {
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
         }
 
         .whats { background-color: var(--whatsapp-cor); }
@@ -285,24 +385,25 @@
         .btn-social:hover {
             opacity: 0.9;
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
         }
 
         /* ÁREA DE CHECKOUT RESERVADA */
         .checkout-box {
             text-align: center;
-            border: 2px dashed #d1d5db;
+            border: 2px dashed #cbd5e1;
             padding: 25px;
-            border-radius: 8px;
-            background: #f9fafb;
+            border-radius: 12px;
+            background: var(--branco);
+            margin-bottom: 40px;
         }
 
         footer {
             text-align: center;
             padding: 25px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             background-color: var(--azul-escuro-logo);
             color: var(--branco);
-            margin-top: 40px;
         }
 
         html {
@@ -313,68 +414,144 @@
 <body>
 
     <header>
-        <!-- LOGO OFICIAL DA AEGINA TECH -->
         <img src="logo.png" alt="Aegina Tech Logo" class="logo-header">
         <p>Presença Digital de Alta Performance para o Seu Negócio</p>
     </header>
 
     <div class="container">
 
-        <!-- 1. HERO SECTION COM VÍDEO E BOTÕES DE AÇÃO -->
-        <section class="secao">
-            <h2><i class="fa-solid fa-rocket"></i> Transforme seu Negócio no Ambiente Digital</h2>
-            <p class="hero-subtitulo">Assista ao vídeo e descubra como ter um site profissional, veloz e focado em atrair clientes todos os dias.</p>
-            
-            <div class="video-wrapper">
-                <video controls poster="https://via.placeholder.com/900x500/132235/ffffff?text=Clique+para+Assistir+ao+V%C3%ADdeo">
-                    <source src="video-aegina.mp4" type="video/mp4">
-                    Seu navegador não suporta a exibição de vídeos.
-                </video>
-            </div>
-
-            <!-- BOTÕES NA HERO -->
+        <!-- 1. CAPA HERO DIRETA -->
+        <div class="hero-card">
+            <h1>Sua Empresa Merece um Site Moderno e Profissional</h1>
+            <p>Desenvolvemos páginas de alta conversão para atrair novos clientes, fortalecer sua marca e destacar seu negócio no mercado.</p>
             <div class="hero-botoes">
                 <a href="https://wa.me/5511995793435" target="_blank" class="btn-hero btn-hero-whats">
-                    <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp Agora
+                    <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
                 </a>
                 <a href="#orcamento" class="btn-hero btn-hero-orcamento">
-                    <i class="fa-solid fa-file-signature"></i> Solicitar Orçamento Grátis
+                    <i class="fa-solid fa-file-signature"></i> Solicitar Orçamento
                 </a>
             </div>
-        </section>
+        </div>
 
-        <!-- 2. SERVIÇOS EXCLUSIVOS DE CRIAÇÃO & MODERNIZAÇÃO -->
-        <section class="secao">
-            <h2><i class="fa-solid fa-gears"></i> Nossas Soluções em Tecnologia</h2>
-            <p style="color: var(--texto-secundario);">Desenvolvemos a estrutura ideal para pequenos comerciantes, profissionais liberais e microempreendedores se destacarem no mercado.</p>
-            
-            <div class="grid-servicos">
-                <div class="card-servico">
-                    <h3><i class="fa-solid fa-laptop-code"></i> Sites Institucionais</h3>
-                    <p>Páginas completas, modernas e velozes para apresentar sua empresa com máxima credibilidade.</p>
+        <!-- 2. VITRINE DE TEMPLATES (SHOWROOM) -->
+        <section>
+            <div class="titulo-secao">
+                <h2><i class="fa-solid fa-laptop-code"></i> Conheça Nossos Modelos</h2>
+                <p>Escolha a estrutura ideal para transformar a presença digital da sua empresa</p>
+            </div>
+
+            <div class="grid-templates">
+                <!-- Modelo 1 -->
+                <div class="card-template">
+                    <div>
+                        <div class="template-icon">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3>Landing Page de Vendas</h3>
+                        <p>Página focada em conversão rápida de clientes direto para o seu WhatsApp.</p>
+                    </div>
+                    <a href="https://wa.me/5511995793435?text=Olá!%20Gostei%20do%20modelo%20Landing%20Page" target="_blank" class="btn-template">
+                        Quero um assim <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                <div class="card-servico">
-                    <h3><i class="fa-solid fa-chart-line"></i> Landing Pages de Vendas</h3>
-                    <p>Páginas diretas e de alta conversão, totalmente otimizadas para gerar cliques no seu WhatsApp.</p>
+                <!-- Modelo 2 -->
+                <div class="card-template">
+                    <div>
+                        <div class="template-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <h3>Site Institucional</h3>
+                        <p>Apresentação completa para empresas, profissionais e negócios locais.</p>
+                    </div>
+                    <a href="https://wa.me/5511995793435?text=Olá!%20Gostei%20do%20modelo%20Site%20Institucional" target="_blank" class="btn-template">
+                        Quero um assim <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                <div class="card-servico">
-                    <h3><i class="fa-solid fa-envelope-open-text"></i> E-mail Profissional</h3>
-                    <p>Criação e configuração do seu e-mail corporativo (seu-nome@suaempresa.com.br) para passar total confiança.</p>
+                <!-- Modelo 3 -->
+                <div class="card-template">
+                    <div>
+                        <div class="template-icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3>Página de Agendamento</h3>
+                        <p>Ideal para clínicas, consultórios, salões e profissionais de atendimento.</p>
+                    </div>
+                    <a href="https://wa.me/5511995793435?text=Olá!%20Gostei%20do%20modelo%20Página%20de%20Agendamento" target="_blank" class="btn-template">
+                        Quero um assim <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                <div class="card-servico">
-                    <h3><i class="fa-solid fa-rotate"></i> Modernização de Sites</h3>
-                    <p>Reformulamos seu site antigo ou lento, deixando-o super rápido e adaptado para todos os celulares.</p>
+                <!-- Modelo 4 -->
+                <div class="card-template">
+                    <div>
+                        <div class="template-icon">
+                            <i class="fa-solid fa-images"></i>
+                        </div>
+                        <h3>Catálogo / Portfólio</h3>
+                        <p>Exiba seus trabalhos, produtos e projetos com um design elegante e organizado.</p>
+                    </div>
+                    <a href="https://wa.me/5511995793435?text=Olá!%20Gostei%20do%20modelo%20Catálogo%20ou%20Portfólio" target="_blank" class="btn-template">
+                        Quero um assim <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- 3. FORMULÁRIO DE CONTATO (WEB3FORMS) -->
-        <section class="secao" id="orcamento">
-            <h2><i class="fa-solid fa-paper-plane"></i> Solicite um Orçamento Sem Compromisso</h2>
-            <p style="margin-bottom: 15px; color: var(--texto-secundario);">Preencha os campos abaixo e entraremos em contato diretamente com você!</p>
+        <!-- 3. SERVIÇOS EXCLUSIVOS (REFORMULADOS) -->
+        <section>
+            <div class="titulo-secao">
+                <h2><i class="fa-solid fa-gears"></i> O Que Fazemos por Você</h2>
+                <p>Soluções completas para colocar seu negócio no topo do ambiente digital</p>
+            </div>
+
+            <div class="grid-servicos">
+                <div class="card-servico">
+                    <h3><i class="fa-solid fa-code"></i> Criação de Sites</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Layouts 100% personalizados</li>
+                        <li><i class="fa-solid fa-check"></i> Adaptado para todos os celulares</li>
+                        <li><i class="fa-solid fa-check"></i> Carregamento ultrarrápido</li>
+                    </ul>
+                </div>
+
+                <div class="card-servico">
+                    <h3><i class="fa-solid fa-rotate"></i> Modernização</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Reformulação de sites antigos</li>
+                        <li><i class="fa-solid fa-check"></i> Melhoria de velocidade</li>
+                        <li><i class="fa-solid fa-check"></i> Design moderno e atual</li>
+                    </ul>
+                </div>
+
+                <div class="card-servico">
+                    <h3><i class="fa-solid fa-envelope-circle-check"></i> E-mail Corporativo</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Nome profissional (@suaempresa)</li>
+                        <li><i class="fa-solid fa-check"></i> Transmite mais autoridade</li>
+                        <li><i class="fa-solid fa-check"></i> Configuração simples e rápida</li>
+                    </ul>
+                </div>
+
+                <div class="card-servico">
+                    <h3><i class="fa-solid fa-shield-halved"></i> Otimização & Segurança</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Botões de contato direto</li>
+                        <li><i class="fa-solid fa-check"></i> Certificado de segurança SSL</li>
+                        <li><i class="fa-solid fa-check"></i> Estrutura pronta para o Google</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FORMULÁRIO DE CONTATO -->
+        <section class="secao-form" id="orcamento">
+            <div class="titulo-secao" style="margin-bottom: 25px;">
+                <h2><i class="fa-solid fa-paper-plane"></i> Solicite um Orçamento</h2>
+                <p>Preencha os campos e entraremos em contato o mais rápido possível!</p>
+            </div>
             
             <form action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="SUA_CHAVE_AQUI">
@@ -388,38 +565,37 @@
             </form>
         </section>
 
-        <!-- 4. CONTATO DIRETO E REDES SOCIAIS COM ÍCONES REAIS -->
-        <section class="secao">
-            <h2><i class="fa-solid fa-comments"></i> Fale Conosco em Nossos Canais</h2>
-            <p style="color: var(--texto-secundario);">Escolha a melhor opção para falar com a equipe da Aegina Tech:</p>
+        <!-- 5. REDES SOCIAIS E CONTATO DIRETO -->
+        <section style="margin-bottom: 40px;">
+            <div class="titulo-secao" style="margin-bottom: 15px;">
+                <h2><i class="fa-solid fa-comments"></i> Siga & Fale Conosco</h2>
+            </div>
+            
             <div class="redes-container">
                 <a href="https://wa.me/5511995793435" target="_blank" class="btn-social whats">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp: (11) 99579-3435
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
                 </a>
-                <a href="https://instagram.com" target="_blank" class="btn-social insta">
-                    <i class="fa-brands fa-instagram"></i> Instagram: @Aegina Tech
+                <a href="https://instagram.com/aeginatech" target="_blank" class="btn-social insta">
+                    <i class="fa-brands fa-instagram"></i> @aeginatech
                 </a>
                 <a href="https://facebook.com" target="_blank" class="btn-social face">
-                    <i class="fa-brands fa-facebook-f"></i> Facebook: Aegina Tech
+                    <i class="fa-brands fa-facebook-f"></i> Facebook
                 </a>
             </div>
         </section>
 
-        <!-- 5. ÁREA DE CHECKOUT RESERVADA -->
-        <section class="secao">
-            <h2><i class="fa-solid fa-shield-halved"></i> Área de Pagamento Seguro</h2>
-            <div class="checkout-box">
-                <p style="margin-bottom: 10px; font-weight: bold; color: var(--azul-escuro-logo);">Já fechou um projeto com a Aegina Tech?</p>
-                <p style="color: var(--texto-secundario); font-size: 0.95rem; margin-bottom: 15px;">Realize o pagamento do seu serviço com total segurança via Pix ou Cartão de Crédito.</p>
-                <p style="color: var(--azul-grecia-vibrante); font-weight: bold; font-size: 0.9rem;">[ Botão Oficial do Mercado Pago ]</p>
-            </div>
-        </section>
+        <!-- 6. ÁREA DE CHECKOUT RESERVADA -->
+        <div class="checkout-box">
+            <p style="margin-bottom: 8px; font-weight: 700; color: var(--azul-escuro-logo);">Já fechou um projeto com a Aegina Tech?</p>
+            <p style="color: var(--texto-secundario); font-size: 0.9rem; margin-bottom: 12px;">Realize o pagamento do seu serviço com total segurança via Pix ou Cartão de Crédito.</p>
+            <p style="color: var(--azul-grecia-vibrante); font-weight: 600; font-size: 0.85rem;">[ Botão Oficial do Mercado Pago ]</p>
+        </div>
 
     </div>
 
     <footer>
         <p>&copy; Aegina Tech - Todos os direitos reservados.</p>
-        <p style="font-size: 0.8rem; margin-top: 5px; color: #9ca3af;">Criação e Modernização de Sites Profissionais</p>
+        <p style="font-size: 0.8rem; margin-top: 4px; color: #94a3b8;">Criação e Modernização de Sites Profissionais</p>
     </footer>
 
 </body>
