@@ -8,7 +8,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
 
-    <!-- Font Awesome Icons (Garante carregamento global de todos os ícones) -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -102,17 +102,15 @@
             font-size: 1rem;
         }
 
-        /* CAPA HERO DE ALTA CONVERSÃO */
+        /* CAPA HERO */
         .hero-card {
             background: linear-gradient(135deg, #132235 0%, #00386b 100%);
             color: var(--branco);
-            padding: 50px 25px;
+            padding: 55px 25px;
             border-radius: 20px;
             text-align: center;
             box-shadow: 0 12px 35px rgba(19, 34, 53, 0.2);
             margin-bottom: 50px;
-            position: relative;
-            overflow: hidden;
         }
 
         .badge-promocao {
@@ -125,7 +123,6 @@
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 20px;
-            letter-spacing: 0.5px;
         }
 
         .hero-card h1 {
@@ -143,18 +140,7 @@
             color: #cbd5e1;
             font-size: 1.1rem;
             max-width: 750px;
-            margin: 0 auto 25px auto;
-        }
-
-        .hero-preco {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            color: #ffffff;
-        }
-
-        .hero-preco strong {
-            font-size: 2rem;
-            color: #25d366;
+            margin: 0 auto 30px auto;
         }
 
         .hero-botoes {
@@ -200,7 +186,7 @@
             transform: translateY(-2px);
         }
 
-        /* SEÇÃO PROBLEMA VS SOLUÇÃO */
+        /* PROBLEMA VS SOLUÇÃO */
         .grid-comparativo {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -217,7 +203,7 @@
 
         .card-problema h3 {
             color: #991b1b;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -233,7 +219,7 @@
 
         .card-solucao h3 {
             color: #166534;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -250,10 +236,6 @@
             align-items: flex-start;
             gap: 10px;
             font-size: 0.95rem;
-        }
-
-        .lista-comparativa li i {
-            margin-top: 4px;
         }
 
         /* SHOWROOM / VITRINE DE TEMPLATES */
@@ -329,69 +311,48 @@
             border-color: var(--azul-grecia-vibrante);
         }
 
-        /* CARD DE PLANO CAMPEÃO / OFERTA */
-        .secao-plano {
-            background: var(--branco);
-            border: 2px solid var(--azul-grecia-vibrante);
-            border-radius: 20px;
-            padding: 40px 25px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 91, 174, 0.1);
+        /* ETAPAS DO PROCESSO */
+        .grid-etapas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
             margin-bottom: 60px;
+        }
+
+        .card-etapa {
+            background: var(--branco);
+            border: 1px solid var(--borda-suave);
+            border-radius: 12px;
+            padding: 25px;
             position: relative;
         }
 
-        .badge-destaque-plano {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--azul-grecia-vibrante);
+        .numero-etapa {
+            width: 35px;
+            height: 35px;
+            background: var(--azul-escuro-logo);
             color: var(--branco);
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .plano-preco-grande {
-            font-size: 2.5rem;
-            color: var(--azul-escuro-logo);
-            font-weight: 800;
-            margin: 15px 0 5px 0;
-        }
-
-        .plano-parcela {
-            color: var(--texto-secundario);
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-        }
-
-        .grid-beneficios-plano {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-        }
-
-        .item-beneficio {
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
-            color: var(--texto-principal);
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
         }
 
-        .item-beneficio i {
-            color: var(--verde-sucesso);
+        .card-etapa h3 {
+            color: var(--azul-escuro-logo);
             font-size: 1.1rem;
+            margin-bottom: 8px;
         }
 
-        /* DEPOIMENTOS (PROVA SOCIAL) */
+        .card-etapa p {
+            color: var(--texto-secundario);
+            font-size: 0.88rem;
+        }
+
+        /* DEPOIMENTOS */
         .grid-depoimentos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -404,7 +365,6 @@
             border: 1px solid var(--borda-suave);
             border-radius: 12px;
             padding: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
 
         .estrelas {
@@ -431,13 +391,12 @@
             color: #94a3b8;
         }
 
-        /* FORMULÁRIO DE CONTATO */
+        /* FORMULÁRIO */
         .secao-form {
             background: var(--branco);
             padding: 35px;
             border-radius: 16px;
             border: 1px solid var(--borda-suave);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             margin-bottom: 50px;
         }
 
@@ -457,7 +416,6 @@
             background: #f8fafc;
             color: var(--texto-principal);
             font-size: 0.95rem;
-            transition: border-color 0.2s;
         }
 
         input:focus, textarea:focus {
@@ -475,7 +433,7 @@
             font-size: 1rem;
             border-radius: 8px;
             cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
+            transition: background 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -484,10 +442,9 @@
 
         .btn-enviar:hover {
             background-color: var(--azul-grecia-vibrante);
-            transform: translateY(-2px);
         }
 
-        /* REDES SOCIAIS (COMPACTAS E PERFEITAMENTE ALINHADAS) */
+        /* REDES SOCIAIS COMPACTAS E ALINHADAS */
         .redes-container {
             display: flex;
             gap: 12px;
@@ -512,12 +469,6 @@
             line-height: 1;
         }
 
-        .btn-social i {
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-        }
-
         .whats { background-color: var(--whatsapp-cor); }
         .insta { background-color: var(--instagram-cor); }
         .face  { background-color: var(--facebook-cor); }
@@ -525,6 +476,102 @@
         .btn-social:hover {
             opacity: 0.9;
             transform: translateY(-2px);
+        }
+
+        /* WIDGET CHAT FLUTUANTE (O "TCHAN") */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .chat-box {
+            background: var(--branco);
+            border: 1px solid var(--borda-suave);
+            border-radius: 16px;
+            padding: 15px 18px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            max-width: 280px;
+            margin-bottom: 10px;
+            position: relative;
+            animation: popup 0.5s ease-out;
+        }
+
+        @keyframes popup {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .avatar-online {
+            position: relative;
+            width: 38px;
+            height: 38px;
+            background: var(--azul-escuro-logo);
+            color: var(--branco);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .ponto-verde {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            background-color: var(--verde-sucesso);
+            border: 2px solid var(--branco);
+            border-radius: 50%;
+        }
+
+        .chat-info h4 {
+            font-size: 0.9rem;
+            color: var(--azul-escuro-logo);
+        }
+
+        .chat-info span {
+            font-size: 0.75rem;
+            color: var(--verde-sucesso);
+            font-weight: 600;
+        }
+
+        .chat-body p {
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+            line-height: 1.4;
+        }
+
+        .btn-chat-whats {
+            background-color: var(--whatsapp-cor);
+            color: var(--branco);
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .btn-chat-whats:hover {
+            background-color: var(--whatsapp-hover);
+            transform: scale(1.05);
         }
 
         /* CHECKOUT RESERVADO */
@@ -559,63 +606,57 @@
 
     <div class="container">
 
-        <!-- 1. CAPA HERO IMPRESSIONANTE -->
+        <!-- 1. CAPA HERO -->
         <div class="hero-card">
-            <span class="badge-promocao"><i class="fa-solid fa-bolt"></i> SITES QUE GERAM CLIENTES TODOS OS DIAS</span>
-            <h1>Tenha um Site Rápido, Moderno e <span>Focado em Vendas</span></h1>
-            <p>Sua empresa precisa de uma estrutura profissional para transmitir confiança, se destacar da concorrência e atrair mais contatos no WhatsApp.</p>
-            
-            <div class="hero-preco">
-                Sites a partir de <strong>R$ 549,90</strong>
-            </div>
+            <span class="badge-promocao"><i class="fa-solid fa-bolt"></i> ESTRUTURA FOCADA EM RESULTADOS</span>
+            <h1>Sua Empresa Merece um Site Moderno e <span>Estratégico</span></h1>
+            <p>Criamos projetos exclusivos para atrair mais clientes, posicionar sua marca no mercado e gerar novas oportunidades de vendas diariamente.</p>
 
             <div class="hero-botoes">
-                <a href="https://wa.me/5511995793435?text=Olá!%20Quero%20um%20orçamento%20para%20meu%20site" target="_blank" class="btn-hero btn-hero-whats">
-                    <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento Grátis
+                <a href="https://wa.me/5511995793435?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20personalizado" target="_blank" class="btn-hero btn-hero-whats">
+                    <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento Personalizado
                 </a>
                 <a href="#modelos" class="btn-hero btn-hero-orcamento">
-                    <i class="fa-solid fa-eye"></i> Ver Modelos Disponíveis
+                    <i class="fa-solid fa-eye"></i> Conhecer Nossas Soluções
                 </a>
             </div>
         </div>
 
-        <!-- 2. PROBLEMA VS SOLUÇÃO (COMPARATIVO MATADOR) -->
+        <!-- 2. PROBLEMA VS SOLUÇÃO -->
         <section>
             <div class="titulo-secao">
                 <h2><i class="fa-solid fa-chart-line"></i> A Diferença Que um Site Profissional Faz</h2>
-                <p>O problema não é o seu serviço, é a falta de uma presença digital estratégica</p>
+                <p>O problema não é a qualidade do seu trabalho, é a falta de presença online</p>
             </div>
 
             <div class="grid-comparativo">
-                <!-- O Problema -->
                 <div class="card-problema">
                     <h3><i class="fa-solid fa-triangle-exclamation" style="color: var(--vermelho-erro);"></i> Sem um Site Profissional:</h3>
                     <ul class="lista-comparativa">
-                        <li><i class="fa-solid fa-xmark" style="color: var(--vermelho-erro);"></i> Perde clientes diariamente para os concorrentes do Google</li>
-                        <li><i class="fa-solid fa-xmark" style="color: var(--vermelho-erro);"></i> Transmite imagem amadora ou passa pouca credibilidade</li>
-                        <li><i class="fa-solid fa-xmark" style="color: var(--vermelho-erro);"></i> Depende apenas do Instagram para tentar fechar vendas</li>
-                        <li><i class="fa-solid fa-xmark" style="color: var(--vermelho-erro);"></i> Não tem canal próprio disponível 24h para o cliente</li>
+                        <li><i class="fa-solid fa-xmark" style="color: var(--vermelho-erro);"></i> Perde clientes diariamente para concorrentes posicionados</li>
+                        <li><i class="fa-solid fa-xmark" style="color: var(--vermelho-erro);"></i> Dificuldade para passar a autoridade que seu trabalho realmente tem</li>
+                        <li><i class="fa-solid fa-xmark" style="color: var(--vermelho-erro);"></i> Fica dependendo apenas das redes sociais para fechar vendas</li>
+                        <li><i class="fa-solid fa-xmark" style="color: var(--vermelho-erro);"></i> Não possui um canal próprio disponível 24 horas por dia</li>
                     </ul>
                 </div>
 
-                <!-- A Solução -->
                 <div class="card-solucao">
                     <h3><i class="fa-solid fa-circle-check" style="color: var(--verde-sucesso);"></i> Com a Aegina Tech:</h3>
                     <ul class="lista-comparativa">
-                        <li><i class="fa-solid fa-check" style="color: var(--verde-sucesso);"></i> Site ultrarrápido projetado para conversão no WhatsApp</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--verde-sucesso);"></i> Design moderno de alto padrão que gera valor imediato</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--verde-sucesso);"></i> Estrutura otimizada para ser encontrada nas pesquisas</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--verde-sucesso);"></i> Suporte completo para seu site ficar sempre perfeito</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--verde-sucesso);"></i> Site rápido e otimizado para gerar chamadas no WhatsApp</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--verde-sucesso);"></i> Layout exclusivo e moderno que transmite confiança imediata</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--verde-sucesso);"></i> Estrutura pronta para ser encontrada nas buscas</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--verde-sucesso);"></i> Acompanhamento técnico e suporte dedicado para seu projeto</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 3. VITRINE DE TEMPLATES (SHOWROOM) -->
+        <!-- 3. VITRINE DE TEMPLATES -->
         <section id="modelos">
             <div class="titulo-secao">
-                <h2><i class="fa-solid fa-laptop-code"></i> Nossas Soluções em Tecnologia</h2>
-                <p>Escolha o formato perfeito para transformar os resultados do seu negócio</p>
+                <h2><i class="fa-solid fa-laptop-code"></i> Modelos & Soluções</h2>
+                <p>Desenvolvemos o formato ideal para as necessidades do seu negócio</p>
             </div>
 
             <div class="grid-templates">
@@ -623,10 +664,10 @@
                     <div>
                         <div class="template-icon"><i class="fa-solid fa-bullseye"></i></div>
                         <h3>Landing Page de Vendas</h3>
-                        <p>Ideal para profissionais e serviços que querem conversão rápida no WhatsApp.</p>
+                        <p>Página de alta conversão para direcionar clientes direto para seu atendimento.</p>
                     </div>
-                    <a href="https://wa.me/5511995793435?text=Tenho%20interesse%20na%20Landing%20Page" target="_blank" class="btn-template">
-                        Quero este modelo <i class="fa-solid fa-arrow-right"></i>
+                    <a href="https://wa.me/5511995793435?text=Quero%20saber%20sobre%20Landing%20Page" target="_blank" class="btn-template">
+                        Consultar Modelo <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
 
@@ -634,10 +675,10 @@
                     <div>
                         <div class="template-icon"><i class="fa-solid fa-building"></i></div>
                         <h3>Site Institucional</h3>
-                        <p>Apresentação completa para empresas e negócios locais se destacarem.</p>
+                        <p>Apresentação profissional completa para empresas e negócios locais.</p>
                     </div>
-                    <a href="https://wa.me/5511995793435?text=Tenho%20interesse%20no%20Site%20Institucional" target="_blank" class="btn-template">
-                        Quero este modelo <i class="fa-solid fa-arrow-right"></i>
+                    <a href="https://wa.me/5511995793435?text=Quero%20saber%20sobre%20Site%20Institucional" target="_blank" class="btn-template">
+                        Consultar Modelo <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
 
@@ -645,10 +686,10 @@
                     <div>
                         <div class="template-icon"><i class="fa-solid fa-calendar-check"></i></div>
                         <h3>Página de Agendamentos</h3>
-                        <p>Perfeito para clínicas, consultórios, salões e profissionais de atendimento.</p>
+                        <p>Estrutura limpa para clínicas, consultórios, salões e profissionais.</p>
                     </div>
-                    <a href="https://wa.me/5511995793435?text=Tenho%20interesse%20na%20Página%20de%20Agendamentos" target="_blank" class="btn-template">
-                        Quero este modelo <i class="fa-solid fa-arrow-right"></i>
+                    <a href="https://wa.me/5511995793435?text=Quero%20saber%20sobre%20Página%20de%20Agendamentos" target="_blank" class="btn-template">
+                        Consultar Modelo <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
 
@@ -656,72 +697,85 @@
                     <div>
                         <div class="template-icon"><i class="fa-solid fa-images"></i></div>
                         <h3>Catálogo / Portfólio</h3>
-                        <p>Exiba seus trabalhos, fotos e serviços com organização e elegância.</p>
+                        <p>Exiba seus produtos, serviços e trabalhos com elegância e organização.</p>
                     </div>
-                    <a href="https://wa.me/5511995793435?text=Tenho%20interesse%20no%20Catálogo%20Portfólio" target="_blank" class="btn-template">
-                        Quero este modelo <i class="fa-solid fa-arrow-right"></i>
+                    <a href="https://wa.me/5511995793435?text=Quero%20saber%20sobre%20Catálogo%20Portfólio" target="_blank" class="btn-template">
+                        Consultar Modelo <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- 4. PLANO COMPLETO E PROMOÇÃO -->
-        <section class="secao-plano">
-            <span class="badge-destaque-plano"><i class="fa-solid fa-star"></i> Pacote Completo Aegina Tech</span>
-            <h2>Tudo o Que Seu Negócio Precisa em Um Só Lugar</h2>
-            <div class="plano-preco-grande">R$ 549,90</div>
-            <p class="plano-parcela">Pagamento facilitado via Pix ou em até 3x no Cartão</p>
-
-            <div class="grid-beneficios-plano">
-                <div class="item-beneficio"><i class="fa-solid fa-check"></i> Hospedagem Grátis por 1 Ano</div>
-                <div class="item-beneficio"><i class="fa-solid fa-check"></i> Certificado de Segurança SSL (https)</div>
-                <div class="item-beneficio"><i class="fa-solid fa-check"></i> Layout 100% Responsivo (Celular/PC)</div>
-                <div class="item-beneficio"><i class="fa-solid fa-check"></i> Integração Direta com WhatsApp</div>
-                <div class="item-beneficio"><i class="fa-solid fa-check"></i> E-mail Profissional Corporativo</div>
-                <div class="item-beneficio"><i class="fa-solid fa-check"></i> Suporte Técnico Garantido</div>
-            </div>
-
-            <a href="https://wa.me/5511995793435?text=Quero%20aproveitar%20o%20plano%20de%20549,90" target="_blank" class="btn-hero btn-hero-whats">
-                <i class="fa-brands fa-whatsapp"></i> Garantir Meu Site Agora
-            </a>
-        </section>
-
-        <!-- 5. PROVA SOCIAL (QUEM CONHECE, APROVA) -->
+        <!-- 4. PASSO A PASSO (PROCESSOS CLAROS) -->
         <section>
             <div class="titulo-secao">
-                <h2><i class="fa-solid fa-thumbs-up"></i> Quem Conhece, Aprova</h2>
-                <p>Veja o feedback de quem já transformou sua presença digital conosco</p>
+                <h2><i class="fa-solid fa-route"></i> Como Funciona o Nosso Processo</h2>
+                <p>Passos simples para colocar o seu site no ar sem complicações</p>
+            </div>
+
+            <div class="grid-etapas">
+                <div class="card-etapa">
+                    <div class="numero-etapa">1</div>
+                    <h3>Primeiro Contato</h3>
+                    <p>Conversamos para entender o objetivo do seu negócio e o que você precisa no site.</p>
+                </div>
+
+                <div class="card-etapa">
+                    <div class="numero-etapa">2</div>
+                    <h3>Proposta & Diagnóstico</h3>
+                    <p>Apresentamos a melhor solução visual e técnica adequada à sua realidade.</p>
+                </div>
+
+                <div class="card-etapa">
+                    <div class="numero-etapa">3</div>
+                    <h3>Desenvolvimento</h3>
+                    <p>Criamos o design, organizamos os textos e configuramos toda a estrutura.</p>
+                </div>
+
+                <div class="card-etapa">
+                    <div class="numero-etapa">4</div>
+                    <h3>Entrega & Suporte</h3>
+                    <p>Seu site entra no ar testado, rápido e pronto para atrair novos contatos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. DEPOIMENTOS -->
+        <section>
+            <div class="titulo-secao">
+                <h2><i class="fa-solid fa-thumbs-up"></i> O Que Nossos Clientes Dizem</h2>
+                <p>Resultados reais de quem confiou na Aegina Tech</p>
             </div>
 
             <div class="grid-depoimentos">
                 <div class="card-depoimento">
                     <div class="estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"O site ficou incrível e super rápido. No primeiro mês já começaram a entrar novos contatos no meu WhatsApp vindo do Google!"</p>
+                    <p>"O site ficou extremamente rápido e bonito. O atendimento foi direto ao ponto e entenderam o que minha empresa precisava."</p>
                     <div class="autor-depoimento">Carlos Eduardo</div>
                     <div class="autor-empresa">Consultoria Empresarial</div>
                 </div>
 
                 <div class="card-depoimento">
                     <div class="estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Atendimento excelente da Aegina Tech. Entenderam exatamente o que eu precisava e entregaram antes do prazo combinado."</p>
+                    <p>"Excelente experiência. A estrutura transmite muita credibilidade para os pacientes que chegam ao meu consultório."</p>
                     <div class="autor-depoimento">Dra. Mariana Silva</div>
                     <div class="autor-empresa">Clínica Odontológica</div>
                 </div>
 
                 <div class="card-depoimento">
                     <div class="estrelas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"A modernização do meu site antigo fez toda a diferença. Meus clientes adoraram a facilidade de navegar pelo celular."</p>
+                    <p>"Reformular meu site antigo foi a melhor decisão. Ficou muito mais fácil dos meus clientes navegarem pelo celular."</p>
                     <div class="autor-depoimento">Roberto Mendes</div>
                     <div class="autor-empresa">Serviços Especializados</div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. FORMULÁRIO DE CONTATO -->
+        <!-- 6. FORMULÁRIO -->
         <section class="secao-form" id="orcamento">
             <div class="titulo-secao" style="margin-bottom: 25px;">
-                <h2><i class="fa-solid fa-paper-plane"></i> Solicite uma Análise Gratuita</h2>
-                <p>Preencha os dados e receba uma proposta rápida e sem compromisso!</p>
+                <h2><i class="fa-solid fa-paper-plane"></i> Solicite uma Análise do Seu Projeto</h2>
+                <p>Preencha os campos e entraremos em contato com uma proposta personalizada!</p>
             </div>
             
             <form action="https://api.web3forms.com/submit" method="POST">
@@ -730,16 +784,16 @@
                 <input type="text" name="name" placeholder="Seu Nome Completo" required>
                 <input type="email" name="email" placeholder="Seu E-mail Profissional" required>
                 <input type="tel" name="phone" placeholder="Seu WhatsApp com DDD">
-                <textarea name="message" rows="4" placeholder="Fale brevemente sobre o seu projeto ou negócio..." required></textarea>
+                <textarea name="message" rows="4" placeholder="Conte-nos brevemente o que você busca para o seu site..." required></textarea>
 
-                <button type="submit" class="btn-enviar"><i class="fa-solid fa-paper-plane"></i> Enviar Pedido de Orçamento</button>
+                <button type="submit" class="btn-enviar"><i class="fa-solid fa-paper-plane"></i> Solicitar Orçamento sem Compromisso</button>
             </form>
         </section>
 
         <!-- 7. REDES SOCIAIS E CONTATO DIRETO -->
         <section style="margin-bottom: 40px;">
             <div class="titulo-secao" style="margin-bottom: 15px;">
-                <h2><i class="fa-solid fa-comments"></i> Fale Diretamente Conosco</h2>
+                <h2><i class="fa-solid fa-comments"></i> Siga & Fale Conosco</h2>
             </div>
             
             <div class="redes-container">
@@ -755,13 +809,35 @@
             </div>
         </section>
 
-        <!-- 8. ÁREA DE CHECKOUT RESERVADA -->
+        <!-- 8. CHECKOUT RESERVADO -->
         <div class="checkout-box">
             <p style="margin-bottom: 6px; font-weight: 700; color: var(--azul-escuro-logo);">Já fechou um projeto com a Aegina Tech?</p>
             <p style="color: var(--texto-secundario); font-size: 0.9rem; margin-bottom: 10px;">Realize o pagamento do seu serviço com total segurança via Pix ou Cartão de Crédito.</p>
             <p style="color: var(--azul-grecia-vibrante); font-weight: 600; font-size: 0.85rem;">[ Área Reservada para o Botão Mercado Pago ]</p>
         </div>
 
+    </div>
+
+    <!-- WIDGET CHAT FLUTUANTE DE ATENDIMENTO -->
+    <div class="chat-widget">
+        <div class="chat-box">
+            <div class="chat-header">
+                <div class="avatar-online">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="ponto-verde"></div>
+                </div>
+                <div class="chat-info">
+                    <h4>Aegina Tech</h4>
+                    <span>Online agora</span>
+                </div>
+            </div>
+            <div class="chat-body">
+                <p>Olá! Tudo bem? Podemos ajudar você a escolher o melhor modelo de site para sua empresa.</p>
+            </div>
+        </div>
+        <a href="https://wa.me/5511995793435?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20dúvida" target="_blank" class="btn-chat-whats">
+            <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+        </a>
     </div>
 
     <footer>
