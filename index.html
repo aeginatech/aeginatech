@@ -6,14 +6,14 @@
     <title>AEGINA TECH - Desenvolvimento Web & Soluções Digitais</title>
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
+            --bg-dark: #0b0f17;
+            --bg-card: #151c2c;
             --primary: #3b82f6;
             --primary-hover: #2563eb;
             --accent: #10b981;
-            --text-main: #f8fafc;
+            --text-main: #ffffff;
             --text-muted: #94a3b8;
-            --border-color: #334155;
+            --border-color: #1e293b;
             --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
@@ -31,18 +31,20 @@
             overflow-x: hidden;
         }
 
-        /* Header / Navbar sem divisórias */
+        /* Header / Navbar */
         header {
-            background: transparent;
-            padding: 24px 40px;
+            background: rgba(11, 15, 23, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 20px 40px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .logo-container {
@@ -54,67 +56,109 @@
         }
 
         .logo-svg {
-            width: 44px;
-            height: 50px;
+            width: 40px;
+            height: 46px;
         }
 
         .brand-name {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            letter-spacing: 1.5px;
-            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            letter-spacing: 1.2px;
+            color: #ffffff;
+        }
+
+        /* Hero Section Capa Marcante */
+        .hero {
+            position: relative;
+            padding: 200px 20px 120px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.15) 0%, rgba(11, 15, 23, 1) 70%);
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 100%;
+            background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.25), transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 20px;
+            color: #60a5fa;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            line-height: 1.15;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 150px 20px 70px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-weight: 800;
-        }
-
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-muted);
-            margin-bottom: 30px;
+            margin-bottom: 36px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Section Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 10px;
+            font-weight: 700;
         }
 
         .section-subtitle {
             text-align: center;
             color: var(--text-muted);
-            margin-bottom: 40px;
+            margin-bottom: 45px;
+            font-size: 1.05rem;
         }
 
-        /* Carrossel Rotativo Automático (7s) */
+        /* Carrossel Rotativo Automático (7s) - MODELOS EXCLUSIVOS */
         .carousel-container {
             position: relative;
             background: var(--bg-card);
-            border-radius: 16px;
-            padding: 32px;
+            border-radius: 20px;
+            padding: 36px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             margin-bottom: 40px;
             overflow: hidden;
         }
@@ -128,7 +172,7 @@
             min-width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 32px;
+            gap: 36px;
             align-items: center;
         }
 
@@ -140,9 +184,10 @@
 
         .slide-img-wrapper {
             width: 100%;
-            height: 320px;
-            border-radius: 12px;
+            height: 340px;
+            border-radius: 14px;
             overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
         .slide-img {
@@ -152,14 +197,14 @@
         }
 
         .slide-content h3 {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             margin-bottom: 15px;
             color: #60a5fa;
         }
 
         .slide-content p {
             color: var(--text-muted);
-            margin-bottom: 24px;
+            margin-bottom: 28px;
             font-size: 1.05rem;
         }
 
@@ -167,7 +212,7 @@
             display: inline-block;
             background: var(--primary);
             color: #fff;
-            padding: 12px 28px;
+            padding: 14px 32px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
@@ -179,6 +224,7 @@
         .btn-primary:hover {
             background: var(--primary-hover);
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
         }
 
         .carousel-controls {
@@ -186,7 +232,7 @@
             justify-content: center;
             align-items: center;
             gap: 12px;
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
         .dot {
@@ -200,11 +246,11 @@
 
         .dot.active {
             background: var(--primary);
-            width: 28px;
+            width: 32px;
             border-radius: 6px;
         }
 
-        /* Grid de 6 Modelos Visuais (2x3) */
+        /* Grid de 6 Modelos Visuais Fixos */
         .models-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -225,7 +271,7 @@
 
         .model-card {
             background: var(--bg-card);
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: transform 0.3s, border-color 0.3s;
@@ -245,7 +291,7 @@
         }
 
         .model-card-body {
-            padding: 20px;
+            padding: 24px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -253,7 +299,7 @@
         }
 
         .model-card-title {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             margin-bottom: 8px;
         }
 
@@ -265,10 +311,10 @@
 
         /* E-mail Profissional Feature */
         .feature-box {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
+            background: linear-gradient(135deg, var(--bg-card), #0f172a);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 40px;
+            border-radius: 20px;
+            padding: 48px;
             margin: 40px 0;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -285,14 +331,14 @@
         .email-demo {
             background: #090d16;
             padding: 24px;
-            border-radius: 10px;
+            border-radius: 12px;
             border: 1px solid var(--border-color);
             font-family: monospace;
             color: var(--accent);
             font-size: 1.05rem;
         }
 
-        /* Grade de Depoimentos (2x3) */
+        /* Grade de Depoimentos */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -313,8 +359,8 @@
 
         .testimonial-card {
             background: var(--bg-card);
-            border-radius: 12px;
-            padding: 24px;
+            border-radius: 14px;
+            padding: 28px;
             border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
@@ -325,7 +371,7 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            margin-top: 16px;
+            margin-top: 20px;
         }
 
         .avatar {
@@ -363,15 +409,15 @@
 
         .faq-item {
             background: var(--bg-card);
-            border-radius: 10px;
-            margin-bottom: 12px;
+            border-radius: 12px;
+            margin-bottom: 14px;
             border: 1px solid var(--border-color);
             overflow: hidden;
         }
 
         .faq-question {
             width: 100%;
-            padding: 20px;
+            padding: 22px;
             background: none;
             border: none;
             color: var(--text-main);
@@ -393,13 +439,13 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
-            padding: 0 20px;
+            padding: 0 22px;
             color: var(--text-muted);
         }
 
         .faq-item.active .faq-answer {
             max-height: 200px;
-            padding: 0 20px 20px 20px;
+            padding: 0 22px 22px 22px;
         }
 
         .faq-item.active .faq-icon {
@@ -421,15 +467,14 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            width: 300px;
-            padding: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            margin-bottom: 12px;
+            width: 320px;
+            padding: 22px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            margin-bottom: 14px;
             transform: translateY(30px);
             opacity: 0;
             visibility: hidden;
             transition: all 0.4s ease;
-            position: relative;
         }
 
         .widget-box.show {
@@ -492,99 +537,97 @@
 </head>
 <body>
 
-    <!-- Header / Logo Aegina Tech com Escudo SVG e Fundo Transparente -->
+    <!-- Header Restaurado com Escudo e Texto em Branco do Início -->
     <header>
         <a href="#" class="logo-container">
             <svg class="logo-svg" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M50 5 L90 25 V60 C90 85 50 110 50 110 C50 110 10 85 10 60 V25 Z" fill="#1e293b" stroke="#3b82f6" stroke-width="6"/>
-                <path d="M50 25 L75 38 V60 C75 75 50 92 50 92 C50 92 25 75 25 60 V38 Z" fill="url(#grad)"/>
-                <defs>
-                    <linearGradient id="grad" x1="25" y1="25" x2="75" y2="92" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#3b82f6"/>
-                        <stop offset="1" stop-color="#1d4ed8"/>
-                    </linearGradient>
-                </defs>
+                <path d="M50 25 L75 38 V60 C75 75 50 92 50 92 C50 92 25 75 25 60 V38 Z" fill="#3b82f6"/>
             </svg>
             <span class="brand-name">AEGINA TECH</span>
         </a>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Capa Hero Restaurada e Bonita -->
     <section class="hero">
-        <h1>Transforme sua Presença Digital em um Imã de Clientes</h1>
-        <p>Desenvolvimento web sob medida com performance extrema, design moderno e suporte dedicado para o seu negócio.</p>
+        <div class="hero-content">
+            <div class="hero-badge">Desenvolvimento Web de Alto Padrão</div>
+            <h1>Sua Marca Merece uma Presença Digital Exclusiva</h1>
+            <p>Criamos sites modernos, ultrarrápidos e preparados para converter visitantes em clientes reais com total autoridade no mercado.</p>
+            <a href="#modelos" class="btn-primary">Conhecer Soluções</a>
+        </div>
     </section>
 
-    <!-- Carrossel Rotativo Automático (Muda a cada 7s) -->
-    <section class="container">
-        <h2 class="section-title">Modelos em Destaque</h2>
+    <!-- Carrossel Rotativo com 6 TEMAS EXCLUSIVOS (Sem repetir com as colunas) -->
+    <section class="container" id="modelos">
+        <h2 class="section-title">Soluções Corporativas em Destaque</h2>
         <p class="section-subtitle">Alternância automática a cada 7 segundos</p>
 
         <div class="carousel-container">
             <div class="carousel-slides" id="carouselSlides">
-                <!-- Slide 1: Advocacia -->
+                <!-- Slide 1: Imobiliária -->
                 <div class="slide">
                     <div class="slide-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" alt="Advocacia" class="slide-img">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="Imobiliária" class="slide-img">
                     </div>
                     <div class="slide-content">
-                        <h3>Advocacia & Jurídico</h3>
-                        <p>Layout sóbrio, elegante e imponente. Transmita credibilidade e autoridade total aos seus clientes desde o primeiro acesso.</p>
+                        <h3>Imobiliárias & Corretores</h3>
+                        <p>Catálogo de imóveis sofisticado com filtros de busca rápida, fotos em alta qualidade e botão direto para corretores.</p>
                         <button class="btn-primary">Solicitar Modelo</button>
                     </div>
                 </div>
-                <!-- Slide 2: Odontologia -->
+                <!-- Slide 2: Contabilidade -->
                 <div class="slide">
                     <div class="slide-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Odontologia" class="slide-img">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Contabilidade" class="slide-img">
                     </div>
                     <div class="slide-content">
-                        <h3>Odontologia & Saúde</h3>
-                        <p>Design moderno, higiênico e otimizado para agendamento direto de consultas com atalho para WhatsApp.</p>
+                        <h3>Contabilidade & Finanças</h3>
+                        <p>Visual corporativo e institucional para escritórios contábeis, consultorias e gestores financeiros.</p>
                         <button class="btn-primary">Solicitar Modelo</button>
                     </div>
                 </div>
-                <!-- Slide 3: Beleza -->
+                <!-- Slide 3: Arquitetura -->
                 <div class="slide">
                     <div class="slide-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Beleza" class="slide-img">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Arquitetura" class="slide-img">
                     </div>
                     <div class="slide-content">
-                        <h3>Beleza & Estética</h3>
-                        <p>Visual sofisticado para clínicas de estética, salões e spas. Exiba seus procedimentos e portfólio em alta resolução.</p>
+                        <h3>Arquitetura & Design</h3>
+                        <p>Portfolio minimalista de altíssimo padrão focado em destacar projetos de interiores e arquitetura moderna.</p>
                         <button class="btn-primary">Solicitar Modelo</button>
                     </div>
                 </div>
-                <!-- Slide 4: Construção -->
+                <!-- Slide 4: Academias -->
                 <div class="slide">
                     <div class="slide-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80" alt="Construção" class="slide-img">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Academias" class="slide-img">
                     </div>
                     <div class="slide-content">
-                        <h3>Construção & Engenharia</h3>
-                        <p>Estrutura sólida para apresentar obras executadas, projetos arquitetônicos e captação de orçamentos.</p>
+                        <h3>Academias & Fitness</h3>
+                        <p>Design dinâmico e enérgico para estúdios, personal trainers e academias apresentarem planos e treinos.</p>
                         <button class="btn-primary">Solicitar Modelo</button>
                     </div>
                 </div>
-                <!-- Slide 5: Pizzaria -->
+                <!-- Slide 5: Restaurantes -->
                 <div class="slide">
                     <div class="slide-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" alt="Pizzaria" class="slide-img">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Restaurantes" class="slide-img">
                     </div>
                     <div class="slide-content">
-                        <h3>Pizzaria & Delivery</h3>
-                        <p>Cardápio digital leve e atraente com imagens destacadas e botão direto para pedir no WhatsApp ou App.</p>
+                        <h3>Gastronomia & Restaurantes</h3>
+                        <p>Apresentação impecável de pratos, reservas de mesas online e fácil navegação para clientes exigentes.</p>
                         <button class="btn-primary">Solicitar Modelo</button>
                     </div>
                 </div>
-                <!-- Slide 6: Pet Shop -->
+                <!-- Slide 6: Tecnologia -->
                 <div class="slide">
                     <div class="slide-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80" alt="Pet Shop" class="slide-img">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="SaaS" class="slide-img">
                     </div>
                     <div class="slide-content">
-                        <h3>Pet Shop & Veterinária</h3>
-                        <p>Design acolhedor e intuitivo para agendamento de banho e tosa, vacinas e catálogo de produtos pet.</p>
+                        <h3>Startups & Tecnologia</h3>
+                        <p>Estrutura moderna para empresas de software, aplicativos e soluções tecnológicas exibirem suas soluções.</p>
                         <button class="btn-primary">Solicitar Modelo</button>
                     </div>
                 </div>
@@ -601,10 +644,10 @@
         </div>
     </section>
 
-    <!-- Grid 2x3 de Modelos Visuais -->
+    <!-- Grid 2x3 dos 6 Modelos Visuais Fixos -->
     <section class="container">
-        <h2 class="section-title">Nossos Modelos Visuais</h2>
-        <p class="section-subtitle">Escolha o layout perfeito para alavancar seu negócio</p>
+        <h2 class="section-title">Modelos Essenciais</h2>
+        <p class="section-subtitle">Opções focadas em prestação de serviços locais e profissionais liberais</p>
 
         <div class="models-grid">
             <!-- Modelo 1 -->
@@ -679,13 +722,12 @@
         </div>
     </section>
 
-    <!-- Depoimentos (Grid 2x3 com Cidade/Estado) -->
+    <!-- Depoimentos (Grid 2x3) -->
     <section class="container">
         <h2 class="section-title">O que dizem nossos clientes</h2>
         <p class="section-subtitle">Aprovação garantida por quem já acelerou com a Aegina Tech</p>
 
         <div class="testimonials-grid">
-            <!-- 1 -->
             <div class="testimonial-card">
                 <p>"O site ficou impecável e trouxe uma credibilidade imensa para o meu escritório de advocacia."</p>
                 <div>
@@ -702,7 +744,6 @@
                     </div>
                 </div>
             </div>
-            <!-- 2 -->
             <div class="testimonial-card">
                 <p>"A facilidade de agendamento no site aumentou bastante a nossa demanda da clínica."</p>
                 <div>
@@ -719,7 +760,6 @@
                     </div>
                 </div>
             </div>
-            <!-- 3 -->
             <div class="testimonial-card">
                 <p>"Design maravilhoso e super fácil das clientes marcarem horários. Recomendo demais!"</p>
                 <div>
@@ -736,7 +776,6 @@
                     </div>
                 </div>
             </div>
-            <!-- 4 -->
             <div class="testimonial-card">
                 <p>"A apresentação dos portfólios de obras ficou sensacional. Excelente trabalho técnico."</p>
                 <div>
@@ -753,7 +792,6 @@
                     </div>
                 </div>
             </div>
-            <!-- 5 -->
             <div class="testimonial-card">
                 <p>"Os pedidos pelo WhatsApp aumentaram expressivamente. O cardápio é super leve e bonito!"</p>
                 <div>
@@ -770,7 +808,6 @@
                     </div>
                 </div>
             </div>
-            <!-- 6 -->
             <div class="testimonial-card">
                 <p>"Muito fácil para agendar banho e tosa. Atendimento impecável durante todo o projeto!"</p>
                 <div>
@@ -790,7 +827,7 @@
         </div>
     </section>
 
-    <!-- FAQ Accordion (Sanfona Interativa) -->
+    <!-- FAQ Accordion -->
     <section class="container">
         <h2 class="section-title">Perguntas Frequentes</h2>
         <p class="section-subtitle">Esclareça suas dúvidas técnicas e comerciais</p>
@@ -838,7 +875,7 @@
         </div>
     </section>
 
-    <!-- Widget de Suporte com Animação + Áudio -->
+    <!-- Widget de Suporte Interativo -->
     <div class="widget-container">
         <div class="widget-box" id="widgetBox">
             <div class="widget-header">
@@ -860,9 +897,9 @@
         <p>&copy; 2026 AEGINA TECH. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Scripts de Interatividade -->
+    <!-- Scripts -->
     <script>
-        // --- 1. Carrossel Rotativo Automático (7 Segundos) ---
+        // --- 1. Carrossel Rotativo Automático (7s) ---
         let currentSlide = 0;
         const totalSlides = 6;
         const slidesContainer = document.getElementById('carouselSlides');
@@ -879,25 +916,21 @@
             goToSlide(currentSlide);
         }, 7000);
 
-        // --- 2. FAQ Accordion (Sanfona - Fecha anteriores ao abrir novo) ---
+        // --- 2. FAQ Accordion ---
         const faqItems = document.querySelectorAll('.faq-item');
 
         faqItems.forEach(item => {
             const btn = item.querySelector('.faq-question');
             btn.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
-                
-                // Fecha todos os itens abertos
                 faqItems.forEach(f => f.classList.remove('active'));
-
-                // Abre o clicado se não estava ativo
                 if (!isActive) {
                     item.classList.add('active');
                 }
             });
         });
 
-        // --- 3. Widget de Suporte (Subida com Animação + Áudio + Botão Fechar) ---
+        // --- 3. Widget de Suporte ---
         const widgetBox = document.getElementById('widgetBox');
         const closeBtn = document.getElementById('closeWidgetBtn');
         const avatarTrigger = document.getElementById('avatarTrigger');
@@ -917,7 +950,6 @@
             } catch (e) {}
         }
 
-        // Exibe o widget automaticamente após 2.5s
         setTimeout(() => {
             widgetBox.classList.add('show');
             playSound();
