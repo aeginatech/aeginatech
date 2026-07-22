@@ -67,7 +67,7 @@
 
         .icon-topo {
             color: #94a3b8;
-            font-size: 0.95rem; /* Silhueta discreta */
+            font-size: 0.95rem;
             text-decoration: none;
             transition: color 0.2s ease, transform 0.2s ease;
         }
@@ -311,11 +311,11 @@
             align-items: flex-start;
         }
 
-        /* FOTO REDONDA DA ATENDENTE LOIRA COM BOLINHA VERDE DENTRO */
+        /* FOTO REDONDA DA ATENDENTE COM BOLINHA VERDE DENTRO */
         .avatar-wrapper {
             position: relative;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -329,8 +329,9 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
+            object-position: center top;
             border: 3px solid var(--branco);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.22);
         }
 
         .bolinha-verde-online {
@@ -557,7 +558,7 @@
 
     </div>
 
-    <!-- WIDGET DE ATENDIMENTO COM FOTO REDONDA DE ATENDENTE LOIRA E SOM REATIVO -->
+    <!-- WIDGET DE ATENDIMENTO COM FOTO DA ATENDENTE -->
     <div class="widget-atendimento">
         
         <!-- BALÃO DE MENSAGEM -->
@@ -571,10 +572,10 @@
             </a>
         </div>
 
-        <!-- ROSTO DA ATENDENTE LOIRA COM O SINAL ONLINE DENTRO DO CÍRCULO -->
+        <!-- ROSTO DA ATENDENTE COM A BOLINHA VERDE DENTRO DO CÍRCULO -->
         <div class="avatar-wrapper" onclick="toggleBalao()">
-            <!-- Rosto de mulher loira com headset -->
-            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=150&q=80" alt="Atendimento Aegina Tech" class="avatar-rosto">
+            <!-- Apontando para o arquivo local da foto da atendente -->
+            <img src="female-customer-support-phone-operator.jpg" alt="Atendimento Aegina Tech" class="avatar-rosto">
             <div class="bolinha-verde-online"></div>
         </div>
 
@@ -586,7 +587,6 @@
 
     <!-- SCRIPT DO SOM DE NOTIFICAÇÃO E ANIMAÇÃO DO BALÃO -->
     <script>
-        // Função para gerar o som de "bip" de notificação usando a Web Audio API do próprio navegador
         function tocarSomBip() {
             try {
                 const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -597,7 +597,7 @@
                 const gain = ctx.createGain();
                 
                 osc.type = 'sine';
-                osc.frequency.setValueAtTime(880, ctx.currentTime); // Tom da notificação
+                osc.frequency.setValueAtTime(880, ctx.currentTime);
                 gain.gain.setValueAtTime(0.1, ctx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
                 
@@ -606,13 +606,10 @@
                 
                 osc.start();
                 osc.stop(ctx.currentTime + 0.3);
-            } catch (e) {
-                // Silencioso se o navegador restringir
-            }
+            } catch (e) {}
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            // Após 2.5 segundos abre o balão suavemente e toca o som
             setTimeout(() => {
                 const balao = document.getElementById('balaoChat');
                 if (balao) {
