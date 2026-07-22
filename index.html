@@ -401,6 +401,22 @@
             min-height: 60px;
         }
 
+        .form-feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            text-align: center;
+            display: none;
+        }
+
+        .form-feedback.success {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid var(--accent);
+            color: #34d399;
+            display: block;
+        }
+
         /* Grade de Depoimentos */
         .testimonials-grid {
             display: grid;
@@ -794,24 +810,25 @@
                 <h3>Envie uma Mensagem</h3>
                 <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 14px;">Solicite um orçamento rápido:</p>
 
-                <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+                <form id="contactForm">
                     <div class="form-group">
                         <label>Seu Nome</label>
-                        <input type="text" class="form-control" placeholder="Nome completo" required>
+                        <input type="text" id="formName" class="form-control" placeholder="Nome completo" required>
                     </div>
                     <div class="form-group">
                         <label>Seu E-mail</label>
-                        <input type="email" class="form-control" placeholder="seuemail@empresa.com.br" required>
+                        <input type="email" id="formEmail" class="form-control" placeholder="seuemail@empresa.com.br" required>
                     </div>
                     <div class="form-group">
                         <label>Telefone / WhatsApp</label>
-                        <input type="tel" class="form-control" placeholder="(00) 00000-0000" required>
+                        <input type="tel" id="formPhone" class="form-control" placeholder="(00) 00000-0000" required>
                     </div>
                     <div class="form-group">
                         <label>Mensagem</label>
-                        <textarea class="form-control" placeholder="Detalhes do seu projeto..." required></textarea>
+                        <textarea id="formMessage" class="form-control" placeholder="Detalhes do seu projeto..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; padding: 10px;">Enviar E-mail</button>
+                    <button type="submit" id="formSubmitBtn" class="btn-primary" style="width: 100%; padding: 10px;">Enviar Mensagem</button>
+                    <div id="formFeedback" class="form-feedback">Mensagem enviada com sucesso! Entraremos em contato em breve.</div>
                 </form>
             </div>
         </div>
@@ -1021,6 +1038,30 @@
                     item.classList.add('active');
                 }
             });
+        });
+
+        // Formulário de Contato Dinâmico
+        const contactForm = document.getElementById('contactForm');
+        const formSubmitBtn = document.getElementById('formSubmitBtn');
+        const formFeedback = document.getElementById('formFeedback');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Feedback visual de carregamento
+            formSubmitBtn.disabled = true;
+            formSubmitBtn.textContent = 'Enviando...';
+            
+            setTimeout(() => {
+                formSubmitBtn.textContent = 'Mensagem Enviada!';
+                formFeedback.classList.add('success');
+                contactForm.reset();
+                
+                setTimeout(() => {
+                    formSubmitBtn.disabled = false;
+                    formSubmitBtn.textContent = 'Enviar Mensagem';
+                }, 4000);
+            }, 1000);
         });
 
         // Widget de Suporte
